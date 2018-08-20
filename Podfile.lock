@@ -1,0 +1,32 @@
+PODS:
+  - ColorMatchTabs (3.0)
+  - Persei (3.1.1)
+  - SnapKit (4.0.0)
+  - SwiftTheme (0.4.1)
+  - YFIconFont (4.0.1)
+
+DEPENDENCIES:
+  - ColorMatchTabs (~> 3.0)
+  - Persei (~> 3.1)
+  - SnapKit (~> 4.0.0)
+  - SwiftTheme
+  - YFIconFont
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ColorMatchTabs
+    - Persei
+    - SnapKit
+    - SwiftTheme
+    - YFIconFont
+
+SPEC CHECKSUMS:
+  ColorMatchTabs: e4d324bb324c041f5e480e14911c974b2a136d9b
+  Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
+  YFIconFont: 3976ccfb749c25e7e920e8dbef51341c8587207a
+
+PODFILE CHECKSUM: 5fe90030dd6313e278bdbad3dcfc97da3be9c8e1
+
+COCOAPODS: 1.5.3
