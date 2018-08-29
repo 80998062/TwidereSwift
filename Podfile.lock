@@ -1,32 +1,53 @@
 PODS:
-  - ColorMatchTabs (3.0)
+  - AutoInsetter (1.2.6)
+  - NewPopMenu (1.1.2)
+  - Pageboy (2.5.4)
   - Persei (3.1.1)
+  - ReSwift (4.0.1)
+  - ReSwiftRouter (0.6.0):
+    - ReSwift (~> 4.0.0)
   - SnapKit (4.0.0)
   - SwiftTheme (0.4.1)
+  - Tabman (1.9.2):
+    - AutoInsetter (~> 1.2.0)
+    - Pageboy (~> 2.5.0)
   - YFIconFont (4.0.1)
 
 DEPENDENCIES:
-  - ColorMatchTabs (~> 3.0)
+  - NewPopMenu (~> 1.1)
   - Persei (~> 3.1)
+  - ReSwift
+  - ReSwiftRouter
   - SnapKit (~> 4.0.0)
   - SwiftTheme
+  - Tabman (~> 1.0)
   - YFIconFont
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ColorMatchTabs
+    - AutoInsetter
+    - NewPopMenu
+    - Pageboy
     - Persei
+    - ReSwift
+    - ReSwiftRouter
     - SnapKit
     - SwiftTheme
+    - Tabman
     - YFIconFont
 
 SPEC CHECKSUMS:
-  ColorMatchTabs: e4d324bb324c041f5e480e14911c974b2a136d9b
+  AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
+  NewPopMenu: 42c2fbd46c7fcb7d7c1c3289c8675afd1877ffc8
+  Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
+  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  ReSwiftRouter: 81f41b37a5dd1c88e1d3d10a660ff2dcc939ba7c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
+  Tabman: a09f7d7aa62b231ec475ca9eb9171f7cc973a3d7
   YFIconFont: 3976ccfb749c25e7e920e8dbef51341c8587207a
 
-PODFILE CHECKSUM: 5fe90030dd6313e278bdbad3dcfc97da3be9c8e1
+PODFILE CHECKSUM: f7f8a2b31655fb8de02e6f3149b9d15740626290
 
 COCOAPODS: 1.5.3

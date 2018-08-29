@@ -6,10 +6,13 @@ target 'twidere' do
 
   # Pods for twidere
   pod 'Persei', '~> 3.1' # https://github.com/Yalantis/Persei
-  pod 'ColorMatchTabs', '~> 3.0'
+  pod 'Tabman', '~> 1.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'YFIconFont' # https://github.com/Xiaoye220/IconFont
   pod 'SwiftTheme'
+  pod 'NewPopMenu', '~> 1.1'
+  pod 'ReSwift'
+  pod 'ReSwiftRouter'
 
 #  target 'twidereTests' do
 #    inherit! :search_paths

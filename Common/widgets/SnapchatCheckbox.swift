@@ -39,6 +39,14 @@ import UIKit
         configure()
     }
     
+    override var tintColor: UIColor!{
+        didSet{
+            layer.borderColor = tintColor.cgColor
+            shapeLayer.fillColor = tintColor.cgColor
+            backgroundColor = isHighlighted ? tintColor.withAlphaComponent(0.2) : .clear
+        }
+    }
+    
     private func configure() {
         clipsToBounds = true
         layer.cornerRadius = 4

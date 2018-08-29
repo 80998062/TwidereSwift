@@ -11,7 +11,7 @@ import YFIconFont
 
 class ThemeCell: UITableViewCell {
     private lazy var palette: UIStackView = {
-        let it = UIStackView()
+        let it = UIStackView(frame: CGRect.zero)
         it.alignment = .fill
         it.distribution = .fillEqually
         it.spacing = 0
@@ -20,10 +20,7 @@ class ThemeCell: UITableViewCell {
     }()
     
     private lazy var themeLabel: UILabel = {
-        let it = UILabel()
-        it.font = UIFont.boldSystemFont(ofSize: 16)
-        it.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        it.shadowOffset = CGSize(width: 1, height: 1)
+        let it = UILabel(frame: CGRect.zero)
         it.numberOfLines = 1
         it.textAlignment = .left
         it.lineBreakMode = .byTruncatingTail
@@ -35,7 +32,7 @@ class ThemeCell: UITableViewCell {
     private let cellWidth = CGFloat(32)
     
     private lazy var clipView: UIView = {
-        let it = UIView()
+        let it = UIView(frame: CGRect.zero)
         it.backgroundColor = UIColor.clear
         it.layer.cornerRadius = 4
         it.layer.borderWidth = 0.5
@@ -45,7 +42,7 @@ class ThemeCell: UITableViewCell {
     }()
     
     private lazy var paletteIcon: UIImageView = {
-        let it = UIImageView()
+        let it = UIImageView(frame: CGRect.zero)
         it.contentMode = .scaleAspectFit
         it.translatesAutoresizingMaskIntoConstraints = false
         let size = CGSize(width: 18, height: 18)
@@ -62,8 +59,7 @@ class ThemeCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // common setup
-        selectedBackgroundView = UIView()
-        backgroundColor = UIColor.white
+        selectedBackgroundView = UIView(frame: CGRect.zero)
         selectionStyle = .none
         // end
         contentView.addSubview(themeLabel)
@@ -93,7 +89,7 @@ class ThemeCell: UITableViewCell {
             make.edges.equalTo(clipView)
         }
 
-        checkbox.addTarget(self, action: #selector(self.onChecked(_:)), for: UIControlEvents.valueChanged)
+        checkbox.addTarget(self, action: #selector(self.onChecked(_:)), for: .valueChanged)
         accessoryView = checkbox
     }
     
@@ -113,7 +109,7 @@ class ThemeCell: UITableViewCell {
     ///   - theme: theme
     ///   - colors: palette colors
     ///   - selector: checkbox listener
-    public func bind(_ theme: AppTheme,_ colors: [UIColor],selected: Bool) -> Void{
+    public func bind(_ theme: AppTheme,_ colors: [UIColor],_ selected: Bool) -> Void{
         themeLabel.text = theme.rawValue
         notidyPaletteCellCountChanged(colors.count)
         assert(colors.count == palette.subviews.count,
@@ -123,7 +119,7 @@ class ThemeCell: UITableViewCell {
         }
         
         if selected != checkbox.isChecked{
-            checkbox.setChecked(selected, animated: false)
+            checkbox.setChecked(selected, animated: true)
             checkbox.isEnabled = !selected // to simulate radio button
         }
     }
@@ -159,7 +155,7 @@ class ThemeCell: UITableViewCell {
     ///
     /// - Returns: cell
     private func appendNewColor() -> Void{
-        let it = UIView()
+        let it = UIView(frame: CGRect.zero)
         it.backgroundColor = UIColor.clear
         it.translatesAutoresizingMaskIntoConstraints = false
         palette.addArrangedSubview(it)

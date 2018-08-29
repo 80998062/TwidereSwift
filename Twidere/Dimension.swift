@@ -15,4 +15,19 @@ extension CGSize {
     
     /// menu icon size
     static let icon_menu = CGSize(width: 18, height: 18)
+    
+    /// menu icon size
+    static let icon_avatar = CGSize(width: 48, height: 48)
+
+    static let icon_avatar_small = CGSize(width: 24, height: 24)
+
+}
+
+
+extension CGFloat {
+    /// table view cell spacing
+    static let cell_spacing = CGFloat(8)
+    
+    /// table view list head
+    static let list_head_height = CGFloat(44)
 }

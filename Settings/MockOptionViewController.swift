@@ -9,18 +9,15 @@
 import UIKit
 import SnapKit
 
-class MockOptionViewController: UITableViewController, OptionViewProtocol {
-    var type: Type!
+class MockOptionViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let size = UIScreen.main.bounds.width / 2
         let it = UILabel(frame: CGRect(x: 0, y: 0, width: size, height: size))
         it.backgroundColor = UIColor.random()
         it.textColor = UIColor.random()
-        it.font = UIFont.boldSystemFont(ofSize: 36)
-        it.text = self.type.rawValue
+        it.text = "????"
         it.sizeToFit()
         it.textAlignment = .center
         view.addSubview(it)

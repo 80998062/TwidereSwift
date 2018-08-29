@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>PinkPower</string>
+	<key>Language</key>
+	<string>zh-CN</string>
+	<key>UIStatusBarStyle</key>
+	<string>LightContent</string>
+	<key>Theme</key>
+	<dict>
+		<key>colorPrimary</key>
+		<string>#c06e6e</string>
+		<key>colorAccent</key>
+		<string>#ff748a</string>
+		<key>colorVerified</key>
+		<string>#e8b5b2</string>
+		<key>windowBackground</key>
+		<string>#f6e7e4</string>
+		<key>colorLight</key>
+		<string>#fffdeb</string>
+		<key>colorDark</key>
+		<string>#454244</string>
+	</dict>
+	<key>Text</key>
+	<dict>
+		<key>colorPrimary</key>
+		<string>#4d5784</string>
+		<key>colorHint</key>
+		<string>#b7ded7</string>
+		<key>colorSecondary</key>
+		<string>#6f97b1</string>
+		<key>colorLink</key>
+		<string>#ff748a</string>
+	</dict>
+	<key>Control</key>
+	<dict>
+		<key>colorNormal</key>
+		<string>#4d5784</string>
+		<key>colorDisable</key>
+		<string>#E0E2E4</string>
+		<key>colorHighlight</key>
+		<string>#ff748a</string>
+	</dict>
+	<key>List</key>
+	<dict>
+		<key>itemBackground</key>
+		<string>#fffdeb</string>
+		<key>colorSeperator</key>
+		<string>#e1e8ed</string>
+	</dict>
+</dict>
+</plist>
