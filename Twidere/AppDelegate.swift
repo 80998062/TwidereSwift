@@ -31,13 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.rootViewController = UIViewController()
-    
+        
         let rootRoutable = RootRoutable(window: window!)
         router = Router(store: appStore, rootRoutable: rootRoutable){ state in
             state.select { $0.navigationState }
         }
-        
-        appStore.dispatch(ReSwiftRouter.SetRouteAction([settingsRoute]))
+        let route = [InAppRoute.Settings.identifier(),
+                     InAppRoute.Settings.Tabs.identifier()]
+        appStore.dispatch(ReSwiftRouter.SetRouteAction(route))
         window!.makeKeyAndVisible()
         return true
     }
@@ -47,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-//        store.dispatch(handleOpenURL(url: url))
+        //        store.dispatch(handleOpenURL(url: url))
         return false
     }
 }

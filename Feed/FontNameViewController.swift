@@ -11,18 +11,7 @@ import YFIconFont
 import SwiftTheme
 import ReSwiftRouter
 
-fileprivate extension FontNameViewController{
-    fileprivate func setupNavgationBar() -> Void{
-        let done = UIBarButtonItem(barButtonSystemItem: .done,target: self, action: #selector(FontNameViewController.onDone))
-        self.navigationItem.leftBarButtonItem = done
-        self.navigationItem.title = "FontName"
-    }
-    
-    @objc dynamic func onDone(){
-        appStore.dispatch(ReSwiftRouter.SetRouteAction())
-    }
-    
-}
+
 
 fileprivate class FontNameCell: UITableViewCell{
     
@@ -94,3 +83,24 @@ class FontNameViewController: UITableViewController {
         }
     }
 }
+
+extension FontNameViewController{
+    fileprivate func setupNavgationBar() -> Void{
+        let done = UIBarButtonItem(barButtonSystemItem: .done,target: self, action: #selector(FontNameViewController.onDone))
+        self.navigationItem.leftBarButtonItem = done
+        self.navigationItem.title = "FontName"
+    }
+    
+    @objc dynamic func onDone(){
+        let newRoute = [InAppRoute.Settings.identifier()]
+        appStore.dispatch(ReSwiftRouter.SetRouteAction(newRoute))
+    }
+    
+}
+
+extension FontNameViewController: Routable{
+    
+}
+
+
+

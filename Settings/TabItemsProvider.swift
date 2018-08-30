@@ -9,19 +9,7 @@
 import UIKit
 import YFIconFont
 import Tabman
-
-enum `Type`: String{
-    typealias RawValue = String
-    case Products, Venues, Reviews, Users
-    static let allValues = [Products, Venues, Reviews, Users]
-}
-
-
-fileprivate let iconMap: [Type:IconFontType] = [
-    Type.Products: FontAwesome.github,
-    Type.Venues: FontAwesome.github,
-    Type.Users: FontAwesome.github,
-    Type.Reviews: FontAwesome.github,]
+import ReSwiftRouter
 
 class TabItemsProvider {
     
@@ -34,21 +22,27 @@ class TabItemsProvider {
     
     init(context: Any?) {
         self.context = context
-        self.viewControllers = {
-            let productsViewController = ThemeViewController()
-            let venuesViewController = FeedDisplayViewController()
-            let reviewsViewController = SourceViewController()
-            let usersViewController = MockOptionViewController()
-            
-            return [productsViewController, venuesViewController, reviewsViewController, usersViewController]
-        }()
-        
-        
-        self.items = Type.allValues.map{ type in
-            Item(title: type.rawValue,
+      
+        self.items = InAppRoute.Settings.Tabs.allValues.map{ route in
+            Item(title: route.rawValue,
                  image: UIImage.iconFont(imageSize: .icon_nav, icon: FontAwesome.github), context: context)
         }
+        
+        self.viewControllers = InAppRoute.Settings.Tabs.allValues.map{ route in
+            switch route{
+            case InAppRoute.Settings.Tabs.Theme:
+                return ThemeViewController()
+            case InAppRoute.Settings.Tabs.Cards:
+                return CardsViewController()
+            case InAppRoute.Settings.Tabs.Sources:
+                return SourceViewController()
+            default:
+                return RoutableViewController()
+            }
+        }
     }
-    
+}
 
+class RoutableViewController: UIViewController,Routable{
+    
 }

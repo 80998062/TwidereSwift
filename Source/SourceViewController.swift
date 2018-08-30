@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReSwift
+import ReSwiftRouter
 
 class SourceViewController: UITableViewController {
 
@@ -71,5 +73,9 @@ class SourceViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
         navigationController?.pushViewController(EditSourceController(), animated: true)
     }
+}
+
+extension SourceViewController: Routable{
+    
 }
 

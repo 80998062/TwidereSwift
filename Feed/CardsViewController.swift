@@ -8,12 +8,13 @@
 
 import UIKit
 import SwiftTheme
+import ReSwift
 import ReSwiftRouter
 
-class FeedDisplayViewController: UITableViewController{
+class CardsViewController: UITableViewController{
     
     public static func embedInNavigationController() -> UINavigationController{
-        let it = UINavigationController(rootViewController: FeedDisplayViewController())
+        let it = UINavigationController(rootViewController: CardsViewController())
         it.isNavigationBarHidden = true
         return it
     }
@@ -124,12 +125,18 @@ class FeedDisplayViewController: UITableViewController{
         let title = Options[indexPath.section]
         switch title {
         case "FontName":
-            let newRoute = [settingsRoute, fontNameRoute]
+            let newRoute = [InAppRoute.Settings.identifier(),
+                            InAppRoute.Settings.FontName.rawValue]
             appStore.dispatch(ReSwiftRouter.SetRouteAction(newRoute))
             break
         default:
             break
         }
     }
+    
+}
+
+
+extension CardsViewController: Routable{
     
 }

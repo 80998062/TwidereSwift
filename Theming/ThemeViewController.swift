@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftTheme
+import ReSwift
+import ReSwiftRouter
 
 class ThemeViewController: UITableViewController {
     
@@ -75,6 +77,8 @@ class ThemeViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
+}
+
+extension ThemeViewController: Routable{
     
 }
