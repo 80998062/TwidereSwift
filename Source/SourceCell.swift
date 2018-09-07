@@ -40,9 +40,7 @@ class SourceCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        selectedBackgroundView = UIView(frame: CGRect.zero)
-        backgroundColor =  #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        
+        selectedBackgroundView = UIView(frame: CGRect.zero)        
         contentView.addSubview(avatarImageView)
         contentView.addSubview(screenNameLabel)
         contentView.addSubview(idLabel)

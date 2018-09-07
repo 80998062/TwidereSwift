@@ -8,20 +8,29 @@
 
 import UIKit
 import ReSwift
-import ReSwiftRouter
+import URLNavigator
+
+extension SourceViewController: Routable{
+    static var URL: String {
+        return appRoute(path: "settings/source")
+    }
+}
 
 class SourceViewController: UITableViewController {
+    
+    let navigator = container.resolve(NavigatorType.self)!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.clearsSelectionOnViewWillAppear = false
+        clearsSelectionOnViewWillAppear = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.separatorInset = UIEdgeInsets.zero
         tableView.setEditing(true, animated: true)
+        tableView.allowsSelectionDuringEditing = true
         register(tableView, cell: SourceCell.self)
+
     }
 
     // MARK: - Table view data source
@@ -42,7 +51,6 @@ class SourceViewController: UITableViewController {
     }
     
 
-    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -61,21 +69,20 @@ class SourceViewController: UITableViewController {
 
     }
 
-    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Select row at \(indexPath.row)")
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
-        navigationController?.pushViewController(EditSourceController(), animated: true)
+        guard let it = self.navigationController else {
+            fatalError()
+        }
+        navigator.push(EditSourceController.URL, context: nil, from: it, animated: true)
     }
 }
 
-extension SourceViewController: Routable{
-    
-}
+
 

@@ -4,23 +4,24 @@ PODS:
   - Pageboy (2.5.4)
   - Persei (3.1.1)
   - ReSwift (4.0.1)
-  - ReSwiftRouter (0.6.0):
-    - ReSwift (~> 4.0.0)
   - SnapKit (4.0.0)
   - SwiftTheme (0.4.1)
+  - Swinject (2.4.1)
   - Tabman (1.9.2):
     - AutoInsetter (~> 1.2.0)
     - Pageboy (~> 2.5.0)
+  - URLNavigator (2.0.6)
   - YFIconFont (4.0.1)
 
 DEPENDENCIES:
   - NewPopMenu (~> 1.1)
   - Persei (~> 3.1)
   - ReSwift
-  - ReSwiftRouter
   - SnapKit (~> 4.0.0)
   - SwiftTheme
+  - Swinject
   - Tabman (~> 1.0)
+  - URLNavigator
   - YFIconFont
 
 SPEC REPOS:
@@ -30,10 +31,11 @@ SPEC REPOS:
     - Pageboy
     - Persei
     - ReSwift
-    - ReSwiftRouter
     - SnapKit
     - SwiftTheme
+    - Swinject
     - Tabman
+    - URLNavigator
     - YFIconFont
 
 SPEC CHECKSUMS:
@@ -42,12 +44,13 @@ SPEC CHECKSUMS:
   Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  ReSwiftRouter: 81f41b37a5dd1c88e1d3d10a660ff2dcc939ba7c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
+  Swinject: f7f15a9672e99328c1f07f277091087917215700
   Tabman: a09f7d7aa62b231ec475ca9eb9171f7cc973a3d7
+  URLNavigator: 2357a32f3b3787b748bf87deb927761f8b0f7f53
   YFIconFont: 3976ccfb749c25e7e920e8dbef51341c8587207a
 
-PODFILE CHECKSUM: f7f8a2b31655fb8de02e6f3149b9d15740626290
+PODFILE CHECKSUM: 749031f6f1439f84dcd9ac23c3a2f3da63a5a1ba
 
 COCOAPODS: 1.5.3

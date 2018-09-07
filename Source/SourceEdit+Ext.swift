@@ -7,42 +7,55 @@
 //
 
 import UIKit
+import PopMenu
+import YFIconFont
+import SwiftTheme
 
-class UrlInputCell: UITableViewCell{
+class TextFieldCell: UITableViewCell{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var textField: UILabel = {
-        let it = UILabel(frame: CGRect.zero)
-//        it.placeholder = "https://[DOMAIN].twitter.com"
-        it.theme_textColor = "Text.colorPrimary"
+    public lazy var textField: KaedeTextField = {
+        let it = KaedeTextField(frame: CGRect.zero)
+        it.placeholderColor = ThemeManager.color(for: "Text.colorSecondary")
+        it.foregroundColor = ThemeManager.color(for: "List.itemBackground")
+        it.backgroundColor = ThemeManager.color(for: "List.colorSeperator")
+        it.clearButtonMode = .never
+        return it
+    }()
+    
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectedBackgroundView = UIView(frame: .zero)
+        contentView.addSubview(textField)
+        textField.snp.makeConstraints{(make) -> Void in
+            make.height.equalTo(44)
+            make.left.right.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+        }
+    }
+}
+
+/// UITableViewCell which show a popup menu when being clicked
+class PopMenuCell: UITableViewCell{
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private var icon: UIImage = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.edit)
+    
+    public lazy var indicator: UIImageView = {
+        let it = UIImageView(image: icon)
+        it.translatesAutoresizingMaskIntoConstraints = false
         return it
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(textField)
-        textField.snp.makeConstraints{(make) -> Void in
-            make.edges.equalToSuperview().inset(20)
-        }
-    }
-}
-
-
-
-/// <#Description#>
-class AccountTypeCell: UITableViewCell{
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        selectedBackgroundView = UIView(frame: CGRect.zero)
+        accessoryView = indicator
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-    }
-    
-    public func bind(nameFor accountType: String){
-        textLabel?.text = accountType
-    }
 }

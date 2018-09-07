@@ -9,13 +9,33 @@
 import UIKit
 import YFIconFont
 import Tabman
-import ReSwiftRouter
+
+fileprivate enum Tabs : String, CaseIterable{
+    typealias RawValue = String
+    case login
+    case theme
+    case display
+    case sources
+    case navigationBar
+    case extensions
+    case refresh
+    case streaming
+    case notifications
+    case network
+    case compose
+    case content
+    case storage
+    case others
+    case about
+    case license
+}
 
 class TabItemsProvider {
     
     public let viewControllers: [UIViewController]
     
     typealias Item = TabmanBar.Item
+    
     public let items: [Item]
     
     private let context: Any?
@@ -23,18 +43,18 @@ class TabItemsProvider {
     init(context: Any?) {
         self.context = context
       
-        self.items = InAppRoute.Settings.Tabs.allValues.map{ route in
+        self.items = Tabs.allValues.map{ route in
             Item(title: route.rawValue,
                  image: UIImage.iconFont(imageSize: .icon_nav, icon: FontAwesome.github), context: context)
         }
         
-        self.viewControllers = InAppRoute.Settings.Tabs.allValues.map{ route in
+        self.viewControllers = Tabs.allValues.map{ route in
             switch route{
-            case InAppRoute.Settings.Tabs.Theme:
+            case .theme:
                 return ThemeViewController()
-            case InAppRoute.Settings.Tabs.Cards:
-                return CardsViewController()
-            case InAppRoute.Settings.Tabs.Sources:
+            case .display:
+                return DisplayViewController()
+            case .sources:
                 return SourceViewController()
             default:
                 return RoutableViewController()
@@ -43,6 +63,6 @@ class TabItemsProvider {
     }
 }
 
-class RoutableViewController: UIViewController,Routable{
+class RoutableViewController: UIViewController{
     
 }

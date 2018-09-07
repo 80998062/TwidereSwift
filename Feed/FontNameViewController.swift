@@ -9,9 +9,12 @@
 import UIKit
 import YFIconFont
 import SwiftTheme
-import ReSwiftRouter
 
-
+extension FontNameViewController: Routable{
+    static var URL: String {
+        return appRoute(path: "/settings/fontName")
+    }
+}
 
 fileprivate class FontNameCell: UITableViewCell{
     
@@ -34,16 +37,27 @@ fileprivate class FontNameCell: UITableViewCell{
 
 class FontNameViewController: UITableViewController {
     
+    public static let ARGS_COMPLETION = "completion"
+    public static let ARGS_FONT_NAME = "font_name"
+    
+    fileprivate var completion: ((_:String?) -> Void)? = nil
+    
+    fileprivate var sourceFontName:String?
+    
+    convenience init(fontName: String?, completion: ((_:String?) -> Void)?){
+        self.init(nibName: nil, bundle: nil)
+        self.sourceFontName  = fontName
+        self.selectedFontName  = fontName
+        self.completion = completion
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavgationBar()
-        
-        guard let fontName = SwiftyPlistManager.shared.fetchValue(for: "FontName", fromPlistWithName: "Prefs") else {
-            return
-        }
-        
-        self.selectedFontName = fontName as? String
-        self.fontNames = ["System","Noteworthy"]
         
         clearsSelectionOnViewWillAppear = false
         tableView.separatorStyle = .singleLine
@@ -51,11 +65,12 @@ class FontNameViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         register(tableView, cell: FontNameCell.self)
+        
     }
     
-    fileprivate var fontNames = [String]()
+    fileprivate let fontNames = ["System", "Noteworthy"]
     
-    fileprivate  var selectedFontName: String? = nil
+    fileprivate var selectedFontName: String? = nil
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,21 +101,23 @@ class FontNameViewController: UITableViewController {
 
 extension FontNameViewController{
     fileprivate func setupNavgationBar() -> Void{
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
         let done = UIBarButtonItem(barButtonSystemItem: .done,target: self, action: #selector(FontNameViewController.onDone))
-        self.navigationItem.leftBarButtonItem = done
-        self.navigationItem.title = "FontName"
+        navigationItem.leftBarButtonItem = done
+        navigationItem.title = "FontName"
     }
     
     @objc dynamic func onDone(){
-        let newRoute = [InAppRoute.Settings.identifier()]
-        appStore.dispatch(ReSwiftRouter.SetRouteAction(newRoute))
+        if selectedFontName != sourceFontName{
+            completion?(selectedFontName)
+        }
+       navigationController?.popViewController(animated: true)
     }
-    
 }
 
-extension FontNameViewController: Routable{
-    
-}
+
 
 
 

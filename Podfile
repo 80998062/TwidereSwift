@@ -12,7 +12,8 @@ target 'twidere' do
   pod 'SwiftTheme'
   pod 'NewPopMenu', '~> 1.1'
   pod 'ReSwift'
-  pod 'ReSwiftRouter'
+  pod 'URLNavigator'
+  pod 'Swinject'
 
 #  target 'twidereTests' do
 #    inherit! :search_paths

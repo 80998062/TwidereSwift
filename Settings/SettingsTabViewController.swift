@@ -13,21 +13,28 @@ import SwiftTheme
 import Tabman
 import Pageboy
 import ReSwift
-import ReSwiftRouter
+
+extension SettingsTabViewController: Routable{
+    static var URL: String {
+        return appRoute(path: "/settings/index")
+    }
+}
+
 
 class SettingsTabViewController: TabmanViewController{
-    fileprivate let tabRoutes = InAppRoute.Settings.Tabs.allValues.map{ $0.rawValue }
+    
     fileprivate lazy var tabItemProvider: TabItemsProvider =
         TabItemsProvider(context: self)
     
-    //    fileprivate var primaryItem: InAppRoute.Settings? = nil
-    //
-    //    init(primaryItem routeElementIdentifier: RouteElementIdentifier?) {
-    //        super.init(nibName: nil, bundle: nil)
-    //        if let it = routeElementIdentifier{
-    //            primaryItem = InAppRoute.Settings(rawValue: it)
-    //        }
-    //    }
+    private var primaryIndex:Int = 0
+    
+    convenience init(forPrimaryItem index: Int?){
+        self.init(nibName: nil, bundle: nil)
+        if index != nil{
+            print("primary index: \(index!)")
+            primaryIndex = index!
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,18 +88,6 @@ extension SettingsTabViewController: StoreSubscriber{
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        appStore.subscribe(self){ state in
-            state.select{ $0.navigationState }
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        appStore.unsubscribe(self)
-    }
-    
 }
 
 extension SettingsTabViewController{
@@ -105,15 +100,11 @@ extension SettingsTabViewController{
         self.navigationItem.title = "Settings"
         let icon = UIImage.iconFont(imageSize: .icon_nav, icon: FontAwesome.close)
         let close = UIBarButtonItem(image: icon, style: .done, target: self, action: #selector(SettingsTabViewController.onBackPress))
-        self.navigationItem.leftBarButtonItem = close
+//        self.navigationItem.leftBarButtonItem = close
     }
     
     @objc dynamic func onBackPress(){
-        print("嘤嘤嘤")
-        let route = [InAppRoute.Settings.identifier(),
-                     InAppRoute.Settings.Tabs.identifier(),
-                     InAppRoute.Settings.Tabs.Cards.rawValue]
-        appStore.dispatch(ReSwiftRouter.SetRouteAction(route))
+        
     }
 }
 
@@ -127,55 +118,16 @@ extension SettingsTabViewController: PageboyViewControllerDataSource {
     }
     
     func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
-        let route = [InAppRoute.Settings.identifier(),
-                     InAppRoute.Settings.Tabs.identifier(),
-                     tabRoutes[index]]
-        appStore.dispatch(ReSwiftRouter.SetRouteAction(route))
         return tabItemProvider.viewControllers[index]
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        //        if primaryItem == nil {
-        //            return .first
-        //        }else{
-        //            if let it = InAppRoute.Settings.allValues.index(of: primaryItem!){
-        //                return PageboyViewController.Page.at(index: it)
-        //            }else{
-        //                return .first
-        //            }
-        //        }
-        return .first
+        return .at(index: primaryIndex)
     }
     
 }
 
-extension SettingsTabViewController: Routable{
-    
-    func changeRouteSegment(_ from: RouteElementIdentifier, to: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-        print("changeRouteSegment from \(from) to \(to)")
-        guard let index = tabRoutes.index(of: to) else {
-            fatalError("Route \(to.description) not supported!")
-        }
-        completionHandler()
-        return tabItemProvider.viewControllers[index] as! Routable
-        
-    }
-    
-    func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-        print("pushRouteSegment  \(routeElementIdentifier) ")
-        guard let index = tabRoutes.index(of: routeElementIdentifier)else {
-            fatalError("Route \(routeElementIdentifier.description) not supported!")
-        }
-        completionHandler()
-        return tabItemProvider.viewControllers[index] as! Routable
-        
-    }
-    
-    
-    func popRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) {
-        completionHandler()
-    }
-}
+
 
 
 

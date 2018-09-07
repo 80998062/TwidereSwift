@@ -9,7 +9,12 @@
 import UIKit
 import SwiftTheme
 import ReSwift
-import ReSwiftRouter
+
+extension ThemeViewController: Routable{
+    static var URL: String {
+        return appRoute(path: "settings/theming")
+    }
+}
 
 class ThemeViewController: UITableViewController {
     
@@ -79,6 +84,4 @@ class ThemeViewController: UITableViewController {
     }
 }
 
-extension ThemeViewController: Routable{
-    
-}
+

@@ -9,34 +9,52 @@
 import UIKit
 import SwiftTheme
 import ReSwift
-import ReSwiftRouter
+import URLNavigator
 
-class CardsViewController: UITableViewController{
-    
-    public static func embedInNavigationController() -> UINavigationController{
-        let it = UINavigationController(rootViewController: CardsViewController())
-        it.isNavigationBarHidden = true
-        return it
+
+extension DisplayViewController: Routable{
+    static var URL: String {
+        return appRoute(path: "settings/display")
     }
+}
+
+class DisplayViewController: UITableViewController{
+
+    let navigator = container.resolve(NavigatorType.self)!
     
-    private let Options = ["Preview",
+    fileprivate let Options = ["Preview",
                            "FontSize",
                            "FontName",
                            "MediaPreviews",
                            "HideActions",
                            "SoundEffects"]
     
+    fileprivate var fontName: String? {
+        didSet{
+            guard let section =  Options.index(of: "FontName")else{
+                fatalError()
+            }
+            let index = IndexPath.init(row: 0, section: section)
+            if let it = (tableView.cellForRow(at: index) as? SelectedFontCell){
+                it.fontName = self.fontName
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
+        clearsSelectionOnViewWillAppear = false
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         register(tableView, cell: SwitchMenuCell.self)
         register(tableView, cell: FontSizeCell.self)
         register(tableView, cell: StaticFeedCell.self)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FontName")
+        register(tableView, cell: SelectedFontCell.self)
+        
+        
+        self.fontName = SwiftyPlistManager.shared.fetchValue(for: "FontName", fromPlistWithName: "Prefs") as? String
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,8 +66,8 @@ class CardsViewController: UITableViewController{
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return .cell_spacing
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .list_head_height
     }
     
     private lazy var headerFooterBackground: UIView = {
@@ -73,6 +91,11 @@ class CardsViewController: UITableViewController{
         }
     }
     
+    // MARK -  cell spacing
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .cell_spacing
+    }
+    
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         let title = Options[section]
         return title == "HideActions" ?  nil : " "
@@ -90,10 +113,6 @@ class CardsViewController: UITableViewController{
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return .list_head_height
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let title = Options[indexPath.section]
@@ -105,9 +124,8 @@ class CardsViewController: UITableViewController{
             let cell = dequeue(tableView, cell: FontSizeCell.self, indexPath: indexPath)
             return cell
         case "FontName":
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FontName", for: indexPath)
-            cell.textLabel?.text = "FontName"
-            cell.accessoryType = .disclosureIndicator
+            let cell = dequeue(tableView, cell: SelectedFontCell.self, indexPath: indexPath)
+            cell.fontName = self.fontName
             return cell
         case "MediaPreviews", "HideActions","SoundEffects":
             let cell = dequeue(tableView, cell: SwitchMenuCell.self, indexPath: indexPath)
@@ -125,18 +143,22 @@ class CardsViewController: UITableViewController{
         let title = Options[indexPath.section]
         switch title {
         case "FontName":
-            let newRoute = [InAppRoute.Settings.identifier(),
-                            InAppRoute.Settings.FontName.rawValue]
-            appStore.dispatch(ReSwiftRouter.SetRouteAction(newRoute))
+            let args: [String : Any?] = [
+                FontNameViewController.ARGS_FONT_NAME : self.fontName,
+                FontNameViewController.ARGS_COMPLETION : self.onFontNameUpdated
+            ]
+            navigator.push(FontNameViewController.URL, context: args, from: self.navigationController, animated: true)
             break
         default:
             break
         }
     }
     
+    private func onFontNameUpdated(newValue: String?){
+        print("onFontNameUpdated: \(String(describing: newValue))")
+        self.fontName = newValue
+    }
 }
 
 
-extension CardsViewController: Routable{
-    
-}
+
