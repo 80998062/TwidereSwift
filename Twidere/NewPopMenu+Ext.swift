@@ -13,17 +13,17 @@ extension PopMenuManager: ThemeObserver{
     func didThemeSwitched() {
         let tint = ThemeManager.color(for: "Control.colorNormal")!
         popMenuAppearance.popMenuColor.actionColor = PopMenuActionColor.tint(tint)
-        let anchor1 = ThemeManager.color(for: "Theme.colorLight")!
-        let anchor2 = ThemeManager.color(for: "Theme.colorPrimary")!
-        popMenuAppearance.popMenuColor.backgroundColor = .gradient(fill: anchor1, anchor2)
+        let accent = ThemeManager.color(for: "Theme.colorVerified")!
+        let light = ThemeManager.color(for: "Theme.colorLight")!
+        popMenuAppearance.popMenuColor.backgroundColor = .gradient(fill: light, accent)
     }
     
     func registerThemeManager(){
         let tint = ThemeManager.color(for: "Control.colorNormal")!
         popMenuAppearance.popMenuColor.actionColor = PopMenuActionColor.tint(tint)
-        let anchor1 = ThemeManager.color(for: "Theme.colorLight")!
-        let anchor2 = ThemeManager.color(for: "Theme.colorPrimary")!
-        popMenuAppearance.popMenuColor.backgroundColor = .gradient(fill: anchor1, anchor2)
+        let accent = ThemeManager.color(for: "Theme.colorVerified")!
+        let light = ThemeManager.color(for: "Theme.colorLight")!
+        popMenuAppearance.popMenuColor.backgroundColor = .gradient(fill: light, accent)
     }
 }
 

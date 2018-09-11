@@ -9,7 +9,7 @@
 import UIKit
 import PopMenu
 import YFIconFont
-
+import RxSwift
 extension EditSourceController{
     func setupNavigationBar(){
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -18,6 +18,7 @@ extension EditSourceController{
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(EditSourceController.onDone))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .done, target: self, action: #selector(EditSourceController.onScanQRCode))
+        
     }
     
     @objc dynamic func onDone(){
@@ -152,33 +153,22 @@ class EditSourceController: UITableViewController {
         }
     }
     
-    private lazy var accoutTypeActions: [PopMenuAction] = {
-        var actions = [PopMenuDefaultAction]()
-        let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
-        for type in (AccountType.allValues) {
-            actions.append(PopMenuDefaultAction(title: type.rawValue, image: icon, color: nil, didSelect: { action in
-                print("\(String(describing: action.title)) is tapped")
-                if nil != action.title{
-                    guard let it = AccountType(rawValue: action.title!) else{
-                        fatalError()
-                    }
-                    self.sourceCopy?.accountType = it
-                }
-            }))
-        }
-        return actions
-    }()
     
     let manager: PopMenuManager = container.resolve(PopMenuManager.self)!
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
         switch section {
-        case 0,1,3,4,5,6:
+        case 0,1,4,5,6:
             break
         case 2:
             let cell = tableView.cellForRow(at: indexPath) as? PopMenuCell
-            manager.actions = accoutTypeActions
+            manager.actions = AccountType.actions(didSelect: accoutTypeHandler)
+            manager.present(sourceView: cell?.indicator, on: self, animated: true, completion: nil)
+            break
+        case 3:
+            let cell = tableView.cellForRow(at: indexPath) as? PopMenuCell
+            manager.actions = AuthType.actions(didSelect: authTypeHandler)
             manager.present(sourceView: cell?.indicator, on: self, animated: true, completion: nil)
             break
         default:
@@ -187,4 +177,24 @@ class EditSourceController: UITableViewController {
         
     }
     
+    private let accoutTypeHandler: PopMenuAction.PopMenuActionHandler = { action in
+        if nil != action.title{
+            guard let it = AccountType(rawValue: action.title!) else{
+                fatalError()
+            }
+//            sourceCopy?.accountType = it
+            print("\(String(describing: action.title)) is selected")
+        }
+    }
+    
+    
+    private let authTypeHandler: PopMenuAction.PopMenuActionHandler = { action in
+        if nil != action.title{
+            guard let it = AuthType(rawValue: action.title!) else{
+                fatalError()
+            }
+            //            sourceCopy?.accountType = it
+            print("\(String(describing: action.title)) is selected")
+        }
+    }
 }

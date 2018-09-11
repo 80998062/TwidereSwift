@@ -4,6 +4,9 @@ PODS:
   - Pageboy (2.5.4)
   - Persei (3.1.1)
   - ReSwift (4.0.1)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
   - SnapKit (4.0.0)
   - SwiftTheme (0.4.1)
   - Swinject (2.4.1)
@@ -17,6 +20,8 @@ DEPENDENCIES:
   - NewPopMenu (~> 1.1)
   - Persei (~> 3.1)
   - ReSwift
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
   - SnapKit (~> 4.0.0)
   - SwiftTheme
   - Swinject
@@ -31,6 +36,8 @@ SPEC REPOS:
     - Pageboy
     - Persei
     - ReSwift
+    - RxCocoa
+    - RxSwift
     - SnapKit
     - SwiftTheme
     - Swinject
@@ -44,6 +51,8 @@ SPEC CHECKSUMS:
   Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
   Swinject: f7f15a9672e99328c1f07f277091087917215700
@@ -51,6 +60,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2357a32f3b3787b748bf87deb927761f8b0f7f53
   YFIconFont: 3976ccfb749c25e7e920e8dbef51341c8587207a
 
-PODFILE CHECKSUM: 749031f6f1439f84dcd9ac23c3a2f3da63a5a1ba
+PODFILE CHECKSUM: 39c5b5dc0f180ced59e4dc1b4c519ad6c9fd8ba0
 
 COCOAPODS: 1.5.3
