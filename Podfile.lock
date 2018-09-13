@@ -1,5 +1,6 @@
 PODS:
   - AutoInsetter (1.2.6)
+  - Localize-Swift (2.0.0)
   - NewPopMenu (1.1.2)
   - Pageboy (2.5.4)
   - Persei (3.1.1)
@@ -17,6 +18,7 @@ PODS:
   - YFIconFont (4.0.1)
 
 DEPENDENCIES:
+  - Localize-Swift (~> 2.0)
   - NewPopMenu (~> 1.1)
   - Persei (~> 3.1)
   - ReSwift
@@ -32,6 +34,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AutoInsetter
+    - Localize-Swift
     - NewPopMenu
     - Pageboy
     - Persei
@@ -47,6 +50,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
+  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   NewPopMenu: 42c2fbd46c7fcb7d7c1c3289c8675afd1877ffc8
   Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
@@ -60,6 +64,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2357a32f3b3787b748bf87deb927761f8b0f7f53
   YFIconFont: 3976ccfb749c25e7e920e8dbef51341c8587207a
 
-PODFILE CHECKSUM: 39c5b5dc0f180ced59e4dc1b4c519ad6c9fd8ba0
+PODFILE CHECKSUM: e890f24ede707c0063b16ef1a03215712cad4737
 
 COCOAPODS: 1.5.3

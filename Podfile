@@ -16,6 +16,8 @@ target 'twidere' do
   pod 'Swinject'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'Localize-Swift', '~> 2.0'
+
 #  target 'twidereTests' do
 #    inherit! :search_paths
 #    # Pods for testing

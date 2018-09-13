@@ -1,0 +1,24 @@
+/* 
+  Settings.strings
+  Twidere
+
+  Created by 沈烨坷 on 2018/9/11.
+  Copyright © 2018 Sinyuk. All rights reserved.
+*/
+
+"login" = "登录";
+"theme" = "主题";
+"display" = "显示";
+"subscriptions" = "订阅";
+"navigationBar" = "导航";
+"extensions" = "扩展";
+"refresh" = "刷新";
+"streaming" = "信息流";
+"notifications" = "通知";
+"network" = "网络";
+"compose" = "发送";
+"content" = "内容";
+"storage" = "储存";
+"others" = "其他";
+"about" = "关于";
+"license" = "证书";

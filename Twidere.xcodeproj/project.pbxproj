@@ -49,6 +49,9 @@
 		7ED0D24321426CA5008C9993 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D24221426CA5008C9993 /* TextFieldEffects.swift */; };
 		7ED0D24521426CCA008C9993 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D24421426CCA008C9993 /* KaedeTextField.swift */; };
 		7ED0D24B21429184008C9993 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D24A21429184008C9993 /* String+Ext.swift */; };
+		7ED2DBA221479A2700164B20 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2DBA021479A2600164B20 /* Settings.strings */; };
+		7ED2DBA521479B4E00164B20 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2DBA321479B4E00164B20 /* Settings.strings */; };
+		7ED2DBAD2147E33000164B20 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2DBAC2147E33000164B20 /* Settings.plist */; };
 		7EFCA69C2134669C00DE22AD /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA69B2134669C00DE22AD /* SwiftyPlistManager.swift */; };
 		7EFCA69E213524A700DE22AD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA69D213524A700DE22AD /* AppState.swift */; };
 		7EFCA6A721352F3800DE22AD /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA6A621352F3800DE22AD /* AppReducer.swift */; };
@@ -121,6 +124,9 @@
 		7ED0D24221426CA5008C9993 /* TextFieldEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		7ED0D24421426CCA008C9993 /* KaedeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
 		7ED0D24A21429184008C9993 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		7ED2DBA121479A2700164B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Settings.strings; sourceTree = "<group>"; };
+		7ED2DBA421479B4E00164B20 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Settings.strings; sourceTree = "<group>"; };
+		7ED2DBAC2147E33000164B20 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		7EFCA69B2134669C00DE22AD /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
 		7EFCA69D213524A700DE22AD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7EFCA6A621352F3800DE22AD /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 		7EBCF42B21256BDC002B96ED /* Twidere */ = {
 			isa = PBXGroup;
 			children = (
+				7ED2DB9F214799FB00164B20 /* en.lproj */,
+				7ED2DB9E2147991E00164B20 /* zh-Hans.lproj */,
 				7ED0D23C2142296B008C9993 /* NewPopMenu+Ext.swift */,
 				7ECD42B821301E9000C2CDFA /* Noteworthy.plist */,
 				7ECD427D212AB6A400C2CDFA /* Classic.plist */,
@@ -215,6 +223,7 @@
 				7ECD42592127D8F600C2CDFA /* TabItemsProvider.swift */,
 				7EBCF45B212571B3002B96ED /* SettingsTabViewController.swift */,
 				7ECD42A6212E987E00C2CDFA /* SettingsNavViewController.swift */,
+				7ED2DBAC2147E33000164B20 /* Settings.plist */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -315,6 +324,22 @@
 				7ED0D23A213FB3C0008C9993 /* Source.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		7ED2DB9E2147991E00164B20 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				7ED2DBA321479B4E00164B20 /* Settings.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
+		7ED2DB9F214799FB00164B20 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				7ED2DBA021479A2600164B20 /* Settings.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		7EFCA6A221352ECC00DE22AD /* Routes */ = {
@@ -431,6 +456,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7EBCF42021256BDC002B96ED;
 			productRefGroup = 7EBCF42A21256BDC002B96ED /* Products */;
@@ -450,8 +476,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ECD427E212AB6A400C2CDFA /* Classic.plist in Resources */,
+				7ED2DBA521479B4E00164B20 /* Settings.strings in Resources */,
+				7ED2DBAD2147E33000164B20 /* Settings.plist in Resources */,
 				7ECD42B921301E9000C2CDFA /* Noteworthy.plist in Resources */,
 				7EBCF43721256BDE002B96ED /* LaunchScreen.storyboard in Resources */,
+				7ED2DBA221479A2700164B20 /* Settings.strings in Resources */,
 				7EFCA6AB2136510100DE22AD /* Prefs.plist in Resources */,
 				7EBCF43421256BDE002B96ED /* Assets.xcassets in Resources */,
 				7ECD4280212ABCBE00C2CDFA /* PinkPower.plist in Resources */,
@@ -501,6 +530,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-twidere/Pods-twidere-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Persei/Persei.framework",
@@ -517,6 +547,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Persei.framework",
@@ -621,6 +652,22 @@
 				7EBCF43621256BDE002B96ED /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7ED2DBA021479A2600164B20 /* Settings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED2DBA121479A2700164B20 /* en */,
+			);
+			name = Settings.strings;
+			sourceTree = "<group>";
+		};
+		7ED2DBA321479B4E00164B20 /* Settings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ED2DBA421479B4E00164B20 /* zh-Hans */,
+			);
+			name = Settings.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

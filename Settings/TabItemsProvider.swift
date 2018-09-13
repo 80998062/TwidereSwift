@@ -9,13 +9,15 @@
 import UIKit
 import YFIconFont
 import Tabman
+import Localize_Swift
+import RxSwift
 
 fileprivate enum Tabs : String, CaseIterable{
     typealias RawValue = String
     case login
     case theme
     case display
-    case sources
+    case subscriptions
     case navigationBar
     case extensions
     case refresh
@@ -28,6 +30,10 @@ fileprivate enum Tabs : String, CaseIterable{
     case others
     case about
     case license
+    
+    func localized() -> String {
+        return self.rawValue.localized()
+    }
 }
 
 class TabItemsProvider {
@@ -42,9 +48,8 @@ class TabItemsProvider {
     
     init(context: Any?) {
         self.context = context
-      
         self.items = Tabs.allValues.map{ route in
-            Item(title: route.rawValue,
+            Item(title: route.localized(),
                  image: UIImage.iconFont(imageSize: .icon_nav, icon: FontAwesome.github), context: context)
         }
         
@@ -54,7 +59,7 @@ class TabItemsProvider {
                 return ThemeViewController()
             case .display:
                 return DisplayViewController()
-            case .sources:
+            case .subscriptions:
                 return SourceViewController()
             default:
                 return RoutableViewController()
