@@ -9,6 +9,7 @@
 import UIKit
 import PopMenu
 import YFIconFont
+
 enum AccountType: String,CaseIterable {
     case Twitter, Weibo , Fanfou
     static func actions(didSelect handler: PopMenuAction.PopMenuActionHandler?) -> [PopMenuAction]{

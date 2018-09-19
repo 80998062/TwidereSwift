@@ -8,20 +8,15 @@
 
 import UIKit
 import ReSwift
+import ReSwiftRouter
 
 class SettingsNavViewController: UINavigationController{
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.prefersLargeTitles = false
         navigationBar.isTranslucent = false
-        navigationItem.setHidesBackButton(false, animated: true)
-    }
-}
-
-
-extension SettingsNavViewController: Routable{
-
-    static var URL: String {
-        return appRoute(path: "/settings")
+        
+        mainStore.dispatch(ReSwiftRouter.SetRouteAction([
+            SettingsNavViewController.route(),
+            SettingsTabViewController.route()]))
     }
 }

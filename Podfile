@@ -5,19 +5,18 @@ target 'twidere' do
   use_frameworks!
 
   # Pods for twidere
-  pod 'Persei', '~> 3.1' # https://github.com/Yalantis/Persei
   pod 'Tabman', '~> 1.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'YFIconFont' # https://github.com/Xiaoye220/IconFont
   pod 'SwiftTheme'
   pod 'NewPopMenu', '~> 1.1'
   pod 'ReSwift'
-  pod 'URLNavigator'
+  pod 'ReSwiftRouter'
   pod 'Swinject'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
-  pod 'Localize-Swift', '~> 2.0'
-
+  pod 'RealmSwift'
+  
 #  target 'twidereTests' do
 #    inherit! :search_paths
 #    # Pods for testing

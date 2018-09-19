@@ -10,12 +10,6 @@ import UIKit
 import SwiftTheme
 import ReSwift
 
-extension ThemeViewController: Routable{
-    static var URL: String {
-        return appRoute(path: "settings/theming")
-    }
-}
-
 class ThemeViewController: UITableViewController {
     
     private let themes: [AppTheme] = [AppTheme.Classic,AppTheme.PinkPower]

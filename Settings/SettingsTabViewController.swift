@@ -14,11 +14,6 @@ import Tabman
 import Pageboy
 import ReSwift
 
-extension SettingsTabViewController: Routable{
-    static var URL: String {
-        return appRoute(path: "/settings/index")
-    }
-}
 
 
 class SettingsTabViewController: TabmanViewController{
@@ -26,12 +21,11 @@ class SettingsTabViewController: TabmanViewController{
     fileprivate lazy var tabItemProvider: TabItemsProvider =
         TabItemsProvider(context: self)
     
-    private var primaryIndex:Int = 0
+    public var primaryIndex:Int = 0
     
     convenience init(forPrimaryItem index: Int?){
         self.init(nibName: nil, bundle: nil)
         if index != nil{
-            print("primary index: \(index!)")
             primaryIndex = index!
         }
     }
@@ -47,9 +41,6 @@ class SettingsTabViewController: TabmanViewController{
         })
         NotificationCenter.default.addObserver(self, selector: #selector(self.didThemeSwitched), name:  NSNotification.Name(rawValue: ThemeUpdateNotification), object: nil)
         dataSource = self
-    }
-    
-    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didReloadWith currentViewController: UIViewController, currentPageIndex: PageboyViewController.PageIndex) {
     }
     
 }

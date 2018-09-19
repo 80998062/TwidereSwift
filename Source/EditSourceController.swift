@@ -10,6 +10,8 @@ import UIKit
 import PopMenu
 import YFIconFont
 import RxSwift
+import ReSwiftRouter
+
 extension EditSourceController{
     func setupNavigationBar(){
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -34,11 +36,6 @@ extension EditSourceController{
 }
 
 
-extension EditSourceController: Routable{
-    static var URL: String {
-        return appRoute(path: "/settings/editSource")
-    }
-}
 
 class EditSourceController: UITableViewController {
     
@@ -195,6 +192,19 @@ class EditSourceController: UITableViewController {
             }
             //            sourceCopy?.accountType = it
             print("\(String(describing: action.title)) is selected")
+        }
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // Required to update the route, when this VC was dismissed through back button from
+        // NavigationController, since we can't intercept the back button
+        if mainStore.state.navigationState.route ==
+            [SettingsNavViewController.route(),
+             SettingsTabViewController.route(),
+             EditSourceController.route()] {
+            mainStore.dispatch(SetRouteAction([SettingsNavViewController.route(),
+                                               SettingsTabViewController.route()]))
         }
     }
 }

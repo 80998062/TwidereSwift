@@ -8,18 +8,10 @@
 
 import UIKit
 import ReSwift
-import URLNavigator
-
-extension SourceViewController: Routable{
-    static var URL: String {
-        return appRoute(path: "settings/source")
-    }
-}
+import ReSwiftRouter
 
 class SourceViewController: UITableViewController {
     
-    let navigator = container.resolve(NavigatorType.self)!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         clearsSelectionOnViewWillAppear = false
@@ -30,7 +22,6 @@ class SourceViewController: UITableViewController {
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
         register(tableView, cell: SourceCell.self)
-
     }
 
     // MARK: - Table view data source
@@ -75,13 +66,12 @@ class SourceViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Select row at \(indexPath.row)")
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
-        guard let it = self.navigationController else {
-            fatalError()
-        }
-        navigator.push(EditSourceController.URL, context: nil, from: it, animated: true)
+        mainStore.dispatch(SetRouteAction([SettingsNavViewController.route(),
+                                           SettingsTabViewController.route(),
+                                           EditSourceController.route()]))
     }
+    
 }
 
 

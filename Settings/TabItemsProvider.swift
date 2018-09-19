@@ -9,7 +9,6 @@
 import UIKit
 import YFIconFont
 import Tabman
-import Localize_Swift
 import RxSwift
 
 fileprivate enum Tabs : String, CaseIterable{
@@ -32,7 +31,7 @@ fileprivate enum Tabs : String, CaseIterable{
     case license
     
     func localized() -> String {
-        return self.rawValue.localized()
+        return ""
     }
 }
 
@@ -61,6 +60,8 @@ class TabItemsProvider {
                 return DisplayViewController()
             case .subscriptions:
                 return SourceViewController()
+            case .navigationBar:
+                return OthersViewController()
             default:
                 return RoutableViewController()
             }

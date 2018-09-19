@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E7773E02150FA220081BCB2 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7773DF2150FA220081BCB2 /* OthersViewController.swift */; };
+		7E7773E2215114040081BCB2 /* Language+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7773E1215114040081BCB2 /* Language+Ext.swift */; };
 		7E86CEA221378ECC006F1440 /* Enum+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86CEA121378ECC006F1440 /* Enum+Ext.swift */; };
-		7E86CEA4213933B9006F1440 /* NavigationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86CEA3213933B9006F1440 /* NavigationMap.swift */; };
+		7E934DAA214B956300FBE203 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DA9214B956300FBE203 /* State.swift */; };
+		7E934DAC214BA4BA00FBE203 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */; };
+		7E934DAE214BA5E700FBE203 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DAD214BA5E700FBE203 /* Routes.swift */; };
 		7EA94BFB2133C79400C6E8D9 /* FontNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA94BFA2133C79400C6E8D9 /* FontNameViewController.swift */; };
 		7EB1DDB72133AEDE0016F370 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1DDB62133AEDE0016F370 /* GMStepper.swift */; };
 		7EBCF42D21256BDC002B96ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCF42C21256BDC002B96ED /* AppDelegate.swift */; };
 		7EBCF43421256BDE002B96ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EBCF43321256BDE002B96ED /* Assets.xcassets */; };
 		7EBCF43721256BDE002B96ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EBCF43521256BDE002B96ED /* LaunchScreen.storyboard */; };
 		7EBCF45C212571B3002B96ED /* SettingsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCF45B212571B3002B96ED /* SettingsTabViewController.swift */; };
-		7EBCF45F212571E9002B96ED /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCF45E212571E9002B96ED /* AbstractViewController.swift */; };
 		7EBCF46421266E1D002B96ED /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCF46321266E1D002B96ED /* UITableView+Ext.swift */; };
 		7EBCF4662126725B002B96ED /* SwitchMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCF4652126725B002B96ED /* SwitchMenuCell.swift */; };
 		7ECD4251212694D600C2CDFA /* IconFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD4250212694D600C2CDFA /* IconFont+Ext.swift */; };
@@ -51,11 +54,9 @@
 		7ED0D24B21429184008C9993 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D24A21429184008C9993 /* String+Ext.swift */; };
 		7ED2DBA221479A2700164B20 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2DBA021479A2600164B20 /* Settings.strings */; };
 		7ED2DBA521479B4E00164B20 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2DBA321479B4E00164B20 /* Settings.strings */; };
-		7ED2DBAD2147E33000164B20 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2DBAC2147E33000164B20 /* Settings.plist */; };
+		7ED2DBB1214A362200164B20 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2DBB0214A362200164B20 /* Settings.swift */; };
 		7EFCA69C2134669C00DE22AD /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA69B2134669C00DE22AD /* SwiftyPlistManager.swift */; };
-		7EFCA69E213524A700DE22AD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA69D213524A700DE22AD /* AppState.swift */; };
 		7EFCA6A721352F3800DE22AD /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA6A621352F3800DE22AD /* AppReducer.swift */; };
-		7EFCA6AB2136510100DE22AD /* Prefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCA6AA2136510100DE22AD /* Prefs.plist */; };
 		A8BF331B7B7F5AD697548FBD /* Pods_twidere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBAF3B751815D893B2EECB5 /* Pods_twidere.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +79,12 @@
 
 /* Begin PBXFileReference section */
 		6953BE287A6F58BCF4E21736 /* Pods-twidere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twidere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twidere/Pods-twidere.debug.xcconfig"; sourceTree = "<group>"; };
+		7E7773DF2150FA220081BCB2 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
+		7E7773E1215114040081BCB2 /* Language+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+Ext.swift"; sourceTree = "<group>"; };
 		7E86CEA121378ECC006F1440 /* Enum+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+Ext.swift"; sourceTree = "<group>"; };
-		7E86CEA3213933B9006F1440 /* NavigationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMap.swift; sourceTree = "<group>"; };
+		7E934DA9214B956300FBE203 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		7E934DAD214BA5E700FBE203 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		7EA94BFA2133C79400C6E8D9 /* FontNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNameViewController.swift; sourceTree = "<group>"; };
 		7EB1DDB62133AEDE0016F370 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		7EBCF42921256BDC002B96ED /* twidere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twidere.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +95,6 @@
 		7EBCF43D21256BDE002B96ED /* twidereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twidereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBCF44821256BDE002B96ED /* twidereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twidereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBCF45B212571B3002B96ED /* SettingsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewController.swift; sourceTree = "<group>"; };
-		7EBCF45E212571E9002B96ED /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		7EBCF46321266E1D002B96ED /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		7EBCF4652126725B002B96ED /* SwitchMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchMenuCell.swift; sourceTree = "<group>"; };
 		7ECD4250212694D600C2CDFA /* IconFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconFont+Ext.swift"; sourceTree = "<group>"; };
@@ -126,11 +130,9 @@
 		7ED0D24A21429184008C9993 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		7ED2DBA121479A2700164B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Settings.strings; sourceTree = "<group>"; };
 		7ED2DBA421479B4E00164B20 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Settings.strings; sourceTree = "<group>"; };
-		7ED2DBAC2147E33000164B20 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		7ED2DBB0214A362200164B20 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7EFCA69B2134669C00DE22AD /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
-		7EFCA69D213524A700DE22AD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7EFCA6A621352F3800DE22AD /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		7EFCA6AA2136510100DE22AD /* Prefs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Prefs.plist; sourceTree = "<group>"; };
 		828E044F38D114D9243A1AB0 /* Pods-twidere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twidere.release.xcconfig"; path = "Pods/Target Support Files/Pods-twidere/Pods-twidere.release.xcconfig"; sourceTree = "<group>"; };
 		8FBAF3B751815D893B2EECB5 /* Pods_twidere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twidere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,16 +171,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E7773DE2150E1110081BCB2 /* ohters */ = {
+			isa = PBXGroup;
+			children = (
+				7E7773DF2150FA220081BCB2 /* OthersViewController.swift */,
+				7E7773E1215114040081BCB2 /* Language+Ext.swift */,
+			);
+			path = ohters;
+			sourceTree = "<group>";
+		};
+		7E934DA8214B955400FBE203 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				7E934DA9214B956300FBE203 /* State.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		7EBCF42021256BDC002B96ED = {
 			isa = PBXGroup;
 			children = (
+				7E934DA8214B955400FBE203 /* State */,
 				7EFCA6A521352F2A00DE22AD /* Reducers */,
 				7EFCA6A221352ECC00DE22AD /* Routes */,
 				7ECD429C212DCB3900C2CDFA /* Source */,
 				7ECD428F212C606400C2CDFA /* Feed */,
 				7ECD42742129D1F700C2CDFA /* Theming */,
 				7EBCF46021266DE1002B96ED /* Common */,
-				7EBCF45D212571D3002B96ED /* Abstract */,
 				7EBCF45A2125714F002B96ED /* Settings */,
 				7EBCF42B21256BDC002B96ED /* Twidere */,
 				7EBCF42A21256BDC002B96ED /* Products */,
@@ -211,8 +230,6 @@
 				7EBCF43521256BDE002B96ED /* LaunchScreen.storyboard */,
 				7EBCF43821256BDE002B96ED /* Info.plist */,
 				7ECD425E2127D9C400C2CDFA /* Dimension.swift */,
-				7EFCA69D213524A700DE22AD /* AppState.swift */,
-				7EFCA6AA2136510100DE22AD /* Prefs.plist */,
 			);
 			path = Twidere;
 			sourceTree = "<group>";
@@ -220,20 +237,13 @@
 		7EBCF45A2125714F002B96ED /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7E7773DE2150E1110081BCB2 /* ohters */,
 				7ECD42592127D8F600C2CDFA /* TabItemsProvider.swift */,
 				7EBCF45B212571B3002B96ED /* SettingsTabViewController.swift */,
 				7ECD42A6212E987E00C2CDFA /* SettingsNavViewController.swift */,
-				7ED2DBAC2147E33000164B20 /* Settings.plist */,
+				7ED2DBB0214A362200164B20 /* Settings.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		7EBCF45D212571D3002B96ED /* Abstract */ = {
-			isa = PBXGroup;
-			children = (
-				7EBCF45E212571E9002B96ED /* AbstractViewController.swift */,
-			);
-			path = Abstract;
 			sourceTree = "<group>";
 		};
 		7EBCF46021266DE1002B96ED /* Common */ = {
@@ -345,7 +355,8 @@
 		7EFCA6A221352ECC00DE22AD /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				7E86CEA3213933B9006F1440 /* NavigationMap.swift */,
+				7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */,
+				7E934DAD214BA5E700FBE203 /* Routes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -477,11 +488,9 @@
 			files = (
 				7ECD427E212AB6A400C2CDFA /* Classic.plist in Resources */,
 				7ED2DBA521479B4E00164B20 /* Settings.strings in Resources */,
-				7ED2DBAD2147E33000164B20 /* Settings.plist in Resources */,
 				7ECD42B921301E9000C2CDFA /* Noteworthy.plist in Resources */,
 				7EBCF43721256BDE002B96ED /* LaunchScreen.storyboard in Resources */,
 				7ED2DBA221479A2700164B20 /* Settings.strings in Resources */,
-				7EFCA6AB2136510100DE22AD /* Prefs.plist in Resources */,
 				7EBCF43421256BDE002B96ED /* Assets.xcassets in Resources */,
 				7ECD4280212ABCBE00C2CDFA /* PinkPower.plist in Resources */,
 			);
@@ -530,35 +539,35 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-twidere/Pods-twidere-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
-				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
-				"${BUILT_PRODUCTS_DIR}/Persei/Persei.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwiftRouter/ReSwiftRouter.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
-				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
 				"${BUILT_PRODUCTS_DIR}/YFIconFont/YFIconFont.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Persei.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwiftRouter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YFIconFont.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,7 +586,6 @@
 				7ECD4286212BF1AF00C2CDFA /* DisplayViewController.swift in Sources */,
 				7EB1DDB72133AEDE0016F370 /* GMStepper.swift in Sources */,
 				7ECD428E212C244000C2CDFA /* ScreenNameLabel.swift in Sources */,
-				7E86CEA4213933B9006F1440 /* NavigationMap.swift in Sources */,
 				7EBCF42D21256BDC002B96ED /* AppDelegate.swift in Sources */,
 				7ECD428A212BF45200C2CDFA /* FontSizeCell.swift in Sources */,
 				7EBCF46421266E1D002B96ED /* UITableView+Ext.swift in Sources */,
@@ -587,21 +595,24 @@
 				7EFCA6A721352F3800DE22AD /* AppReducer.swift in Sources */,
 				7ECD42782129D24A00C2CDFA /* ThemeCell.swift in Sources */,
 				7ECD427A2129D2D600C2CDFA /* AppTheme.swift in Sources */,
-				7EFCA69E213524A700DE22AD /* AppState.swift in Sources */,
 				7EA94BFB2133C79400C6E8D9 /* FontNameViewController.swift in Sources */,
 				7ECD42B72130179900C2CDFA /* SourceEdit+Ext.swift in Sources */,
 				7ECD4292212C609400C2CDFA /* AvatarImageView.swift in Sources */,
 				7ED0D24321426CA5008C9993 /* TextFieldEffects.swift in Sources */,
 				7ECD42632127E37000C2CDFA /* Color+Ext.swift in Sources */,
+				7E934DAC214BA4BA00FBE203 /* UINavigationController+Ext.swift in Sources */,
+				7E934DAA214B956300FBE203 /* State.swift in Sources */,
 				7ECD42762129D23100C2CDFA /* ThemeViewController.swift in Sources */,
+				7E7773E2215114040081BCB2 /* Language+Ext.swift in Sources */,
 				7EBCF4662126725B002B96ED /* SwitchMenuCell.swift in Sources */,
 				7ECD42732129D0DE00C2CDFA /* SnapchatCheckbox.swift in Sources */,
 				7ECD4251212694D600C2CDFA /* IconFont+Ext.swift in Sources */,
 				7E86CEA221378ECC006F1440 /* Enum+Ext.swift in Sources */,
 				7ECD42B1212FE04700C2CDFA /* SourceViewController.swift in Sources */,
 				7ECD425F2127D9C400C2CDFA /* Dimension.swift in Sources */,
+				7E934DAE214BA5E700FBE203 /* Routes.swift in Sources */,
 				7ED0D23B213FB3C0008C9993 /* Source.swift in Sources */,
-				7EBCF45F212571E9002B96ED /* AbstractViewController.swift in Sources */,
+				7E7773E02150FA220081BCB2 /* OthersViewController.swift in Sources */,
 				7ECD425A2127D8F600C2CDFA /* TabItemsProvider.swift in Sources */,
 				7ECD42B3212FE2DF00C2CDFA /* EditSourceController.swift in Sources */,
 				7ECD4294212C60F000C2CDFA /* IdLabel.swift in Sources */,
@@ -609,6 +620,7 @@
 				7ECD4296212C611700C2CDFA /* ContentTextView.swift in Sources */,
 				7ED0D23D2142296B008C9993 /* NewPopMenu+Ext.swift in Sources */,
 				7ECD42BC2130217200C2CDFA /* Font+Ext.swift in Sources */,
+				7ED2DBB1214A362200164B20 /* Settings.swift in Sources */,
 				7ECD429B212DC34700C2CDFA /* ScaledFont.swift in Sources */,
 				7ED0D239213FA70F008C9993 /* SelectedFontCell.swift in Sources */,
 				7ED0D24B21429184008C9993 /* String+Ext.swift in Sources */,

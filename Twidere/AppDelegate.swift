@@ -9,17 +9,13 @@
 import UIKit
 import SwiftTheme
 import ReSwift
-import URLNavigator
 import Swinject
 import PopMenu
+import RxSwift
+import ReSwiftRouter
 
 /// global module
 let container: Container = Container(){ it in
-    it.register(NavigatorType.self){ _ in
-        let navigator = Navigator()
-        NavigationMap.initialize(navigator: navigator) // register routes
-        return navigator
-    }
     
     it.register(PopMenuManager.self){ _ in
         let manager = PopMenuManager()
@@ -28,27 +24,43 @@ let container: Container = Container(){ it in
     }
 }
 
+
+var mainStore = Store<AppState>(reducer: appReducer,state: nil)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    fileprivate var navigator = container.resolve(NavigatorType.self)
+    var router: Router<AppState>!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {       
-        // apply theme
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         setupPalette()
-        setupCustomFont()
-        
-        //
         window = UIWindow(frame: UIScreen.main.bounds)
-        let root = SettingsNavViewController(rootViewController: SettingsTabViewController(forPrimaryItem: 0))
-        window!.rootViewController = root
-        window!.makeKeyAndVisible()
+        /*
+         Set a dummy VC to satisfy UIKit
+         Router will set correct VC throug async call which means
+         window would not have rootVC at completion of this method
+         which causes a crash.
+         */
+        window?.rootViewController = UIViewController()
+        
+        let rootRoutable = RootRoutable(window!)
+        
+        router = Router(store: mainStore, rootRoutable: rootRoutable) { state in
+            state.select{ $0.navigationState }
+        }
+        
+        print("?? \(String(describing: SettingsNavViewController.route()))")
+        mainStore.dispatch(ReSwiftRouter.SetRouteAction([SettingsNavViewController.route()]))
+        
+        window?.makeKeyAndVisible()
         return true
     }
     
-    func applicationDidFinishLaunching(_ application: UIApplication) {
-        SwiftyPlistManager.shared.start(plistNames: ["Prefs"], logging: true)
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        mainStore.dispatch(handleOpenU)
+        return false
     }
    
 }
@@ -63,12 +75,7 @@ extension AppDelegate{
     }
     
     private func setupPalette() -> Void {
-        guard let theme = SwiftyPlistManager.shared.fetchValue(for: "ThemeName", fromPlistWithName: "Prefs") else {
-            print("Can't find key: ThemeName in Info.plist")
-            return
-        }
-        
-        ThemeManager.setTheme(plistName: theme as! String, path: .mainBundle)
+        ThemeManager.setTheme(plistName: "Classic", path: .mainBundle)
         // status bar
         UIApplication.shared.theme_setStatusBarStyle("UIStatusBarStyle", animated: true)
         // navigation bar
@@ -132,27 +139,6 @@ extension AppDelegate{
         let toggle = UISwitch.appearance()
         toggle.theme_onTintColor = "Theme.colorAccent"
         
-    }
-}
-
-
-// MARK: - handle url
-extension AppDelegate {
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        // Try presenting the URL first
-        if self.navigator?.present(url, wrap: UINavigationController.self) != nil {
-            print("[Navigator] present: \(url)")
-            return true
-        }
-        
-        // Try opening the URL
-        if self.navigator?.open(url) == true {
-            print("[Navigator] open: \(url)")
-            return true
-        }
-        
-        return false
     }
 }
 

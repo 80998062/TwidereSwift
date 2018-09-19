@@ -9,12 +9,8 @@
 import UIKit
 import YFIconFont
 import SwiftTheme
-
-extension FontNameViewController: Routable{
-    static var URL: String {
-        return appRoute(path: "/settings/fontName")
-    }
-}
+import ReSwift
+import ReSwiftRouter
 
 fileprivate class FontNameCell: UITableViewCell{
     
@@ -52,7 +48,7 @@ class FontNameViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      
+        
     }
     
     override func viewDidLoad() {
@@ -113,7 +109,19 @@ extension FontNameViewController{
         if selectedFontName != sourceFontName{
             completion?(selectedFontName)
         }
-       navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // Required to update the route, when this VC was dismissed through back button from
+        // NavigationController, since we can't intercept the back button
+        if mainStore.state.navigationState.route ==
+            [SettingsNavViewController.route(),
+             SettingsTabViewController.route(),
+             FontNameViewController.route()] {
+            mainStore.dispatch(SetRouteAction([SettingsNavViewController.route(),
+                                               SettingsTabViewController.route()]))
+        }
     }
 }
 

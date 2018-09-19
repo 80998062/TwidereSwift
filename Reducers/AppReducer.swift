@@ -6,8 +6,13 @@
 //  Copyright © 2018 Sinyuk. All rights reserved.
 //
 
+import Foundation
 import ReSwift
+import ReSwiftRouter
 
-//func appReducer(action: Action, state: State?) -> State {
-//    return State()
-//}
+func appReducer(action: Action, state: AppState?) -> AppState {
+    return AppState(
+        navigationState: NavigationReducer.handleAction(action, state: state?.navigationState)
+    )
+}
+

@@ -30,4 +30,7 @@ extension CGFloat {
     
     /// table view list head
     static let list_head_height = CGFloat(44)
+    
+    static let list_footer_height = CGFloat(32)
+
 }

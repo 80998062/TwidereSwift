@@ -9,25 +9,17 @@
 import UIKit
 import SwiftTheme
 import ReSwift
-import URLNavigator
-
-
-extension DisplayViewController: Routable{
-    static var URL: String {
-        return appRoute(path: "settings/display")
-    }
-}
+import ReSwiftRouter
 
 class DisplayViewController: UITableViewController{
-
-    let navigator = container.resolve(NavigatorType.self)!
+    
     
     fileprivate let Options = ["Preview",
-                           "FontSize",
-                           "FontName",
-                           "MediaPreviews",
-                           "HideActions",
-                           "SoundEffects"]
+                               "FontSize",
+                               "FontName",
+                               "MediaPreviews",
+                               "HideActions",
+                               "SoundEffects"]
     
     fileprivate var fontName: String? {
         didSet{
@@ -143,20 +135,13 @@ class DisplayViewController: UITableViewController{
         let title = Options[indexPath.section]
         switch title {
         case "FontName":
-            let args: [String : Any?] = [
-                FontNameViewController.ARGS_FONT_NAME : self.fontName,
-                FontNameViewController.ARGS_COMPLETION : self.onFontNameUpdated
-            ]
-            navigator.push(FontNameViewController.URL, context: args, from: self.navigationController, animated: true)
+            mainStore.dispatch(SetRouteAction([SettingsNavViewController.route(),
+                                               SettingsTabViewController.route(),
+                                               FontNameViewController.route()]))
             break
         default:
             break
         }
-    }
-    
-    private func onFontNameUpdated(newValue: String?){
-        print("onFontNameUpdated: \(String(describing: newValue))")
-        self.fontName = newValue
     }
 }
 
