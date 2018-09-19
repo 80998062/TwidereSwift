@@ -18,7 +18,7 @@ class SwitchMenuCell: UITableViewCell {
     }()
     
     private let maxWidth = UIScreen.main.bounds.width * 0.75
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: CGRect.zero)
         accessoryView = toggle

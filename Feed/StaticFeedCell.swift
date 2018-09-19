@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import YFIconFont
 import SwiftTheme
+import IconFont
 
 class StaticFeedCell: UITableViewCell, ThemeObserver{
     
@@ -79,7 +79,7 @@ class StaticFeedCell: UITableViewCell, ThemeObserver{
     
     private let padding: CGFloat = CGFloat(20)
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: CGRect.zero)
         contentView.addSubview(avatar)

@@ -2,13 +2,14 @@
 //  ThemeViewController.swift
 //  twidere
 //
-//  Created by 沈烨坷 on 2018/8/20.
+//  Created by 沈烨坷 on 2018/9/19.
 //  Copyright © 2018 Sinyuk. All rights reserved.
 //
 
 import UIKit
 import SwiftTheme
 import ReSwift
+
 
 class ThemeViewController: UITableViewController {
     
@@ -43,7 +44,7 @@ class ThemeViewController: UITableViewController {
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         tableView.estimatedRowHeight = 56
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: ThemeCell.self)
     }
     
@@ -77,5 +78,3 @@ class ThemeViewController: UITableViewController {
         }
     }
 }
-
-

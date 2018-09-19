@@ -18,7 +18,7 @@ class SourceViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
         register(tableView, cell: SourceCell.self)
@@ -47,7 +47,7 @@ class SourceViewController: UITableViewController {
         return true
     }
  
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)

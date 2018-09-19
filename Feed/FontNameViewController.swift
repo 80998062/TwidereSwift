@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import YFIconFont
 import SwiftTheme
 import ReSwift
 import ReSwiftRouter
 
 fileprivate class FontNameCell: UITableViewCell{
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .default
         selectedBackgroundView = UIView(frame: .zero)
@@ -59,7 +58,7 @@ class FontNameViewController: UITableViewController {
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: FontNameCell.self)
         
     }

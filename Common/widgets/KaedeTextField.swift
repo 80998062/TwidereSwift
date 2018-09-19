@@ -57,7 +57,7 @@ import UIKit
         }
     }
     
-    private let foregroundView = UIView()
+    private let foregroundView = UIView(frame: CGRect.zero)
     private let placeholderInsets = CGPoint(x: 24, y: 5)
     private let textFieldInsets = CGPoint(x: 24, y: 0)
     

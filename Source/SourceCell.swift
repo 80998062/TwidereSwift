@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YFIconFont
+import IconFont
 import SwiftTheme
 import SnapKit
 
@@ -38,7 +38,7 @@ class SourceCell: UITableViewCell {
     
     private let verticalPadding = CGFloat(12)
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: CGRect.zero)        
         contentView.addSubview(avatarImageView)

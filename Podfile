@@ -1,4 +1,4 @@
-platform :ios, '11.4'
+platform :ios, '12.0'
 
 target 'twidere' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,14 +7,13 @@ target 'twidere' do
   # Pods for twidere
   pod 'Tabman', '~> 1.0'
   pod 'SnapKit', '~> 4.0.0'
-  pod 'YFIconFont' # https://github.com/Xiaoye220/IconFont
-  pod 'SwiftTheme'
-  pod 'NewPopMenu', '~> 1.1'
+#  pod 'YFIconFont' # https://github.com/Xiaoye220/IconFont
+  pod 'NewPopMenu', '~> 2.0'
   pod 'ReSwift'
   pod 'ReSwiftRouter'
   pod 'Swinject'
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'RealmSwift'
   
 #  target 'twidereTests' do

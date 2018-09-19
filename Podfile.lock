@@ -1,38 +1,34 @@
 PODS:
   - AutoInsetter (1.2.6)
-  - NewPopMenu (1.1.2)
+  - NewPopMenu (2.1.1)
   - Pageboy (2.5.4)
-  - Realm (3.7.6):
-    - Realm/Headers (= 3.7.6)
-  - Realm/Headers (3.7.6)
-  - RealmSwift (3.7.6):
-    - Realm (= 3.7.6)
+  - Realm (3.9.0):
+    - Realm/Headers (= 3.9.0)
+  - Realm/Headers (3.9.0)
+  - RealmSwift (3.9.0):
+    - Realm (= 3.9.0)
   - ReSwift (4.0.1)
   - ReSwiftRouter (0.6.0):
     - ReSwift (~> 4.0.0)
-  - RxCocoa (4.2.0):
+  - RxCocoa (4.3.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
-  - SnapKit (4.0.0)
-  - SwiftTheme (0.4.1)
+  - RxSwift (4.3.0)
+  - SnapKit (4.0.1)
   - Swinject (2.4.1)
   - Tabman (1.9.2):
     - AutoInsetter (~> 1.2.0)
     - Pageboy (~> 2.5.0)
-  - YFIconFont (4.0.1)
 
 DEPENDENCIES:
-  - NewPopMenu (~> 1.1)
+  - NewPopMenu (~> 2.0)
   - RealmSwift
   - ReSwift
   - ReSwiftRouter
-  - RxCocoa (~> 4.0)
-  - RxSwift (~> 4.0)
+  - RxCocoa
+  - RxSwift
   - SnapKit (~> 4.0.0)
-  - SwiftTheme
   - Swinject
   - Tabman (~> 1.0)
-  - YFIconFont
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -46,27 +42,23 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
-    - SwiftTheme
     - Swinject
     - Tabman
-    - YFIconFont
 
 SPEC CHECKSUMS:
   AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
-  NewPopMenu: 42c2fbd46c7fcb7d7c1c3289c8675afd1877ffc8
+  NewPopMenu: 60d67846a401964dcaa51bffb792f04f6fe2fc76
   Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
-  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
-  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
+  Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
+  RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   ReSwiftRouter: 81f41b37a5dd1c88e1d3d10a660ff2dcc939ba7c
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
+  RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
+  RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Swinject: f7f15a9672e99328c1f07f277091087917215700
   Tabman: a09f7d7aa62b231ec475ca9eb9171f7cc973a3d7
-  YFIconFont: 3976ccfb749c25e7e920e8dbef51341c8587207a
 
-PODFILE CHECKSUM: 2a475d43d0ad63a6343c06e6b19483aad2e685dd
+PODFILE CHECKSUM: 91142c6af59fbac1fb6f9565ddf4f0b3bb1c5d78
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

@@ -176,7 +176,7 @@ import UIKit
     let limitHitAnimationDuration = TimeInterval(0.1)
     
     lazy var leftButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(frame: CGRect.zero)
         button.setTitle(self.leftButtonText, for: .normal)
         button.setTitleColor(self.buttonsTextColor, for: .normal)
         button.backgroundColor = self.buttonsBackgroundColor
@@ -189,7 +189,7 @@ import UIKit
     }()
     
     lazy var rightButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(frame: CGRect.zero)
         button.setTitle(self.rightButtonText, for: .normal)
         button.setTitleColor(self.buttonsTextColor, for: .normal)
         button.backgroundColor = self.buttonsBackgroundColor

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sinyuk. All rights reserved.
 //
 
-import YFIconFont
+import IconFont
 
 public enum MyIconFont:String {
     public typealias RawValue = String

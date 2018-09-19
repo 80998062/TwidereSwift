@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YFIconFont
+import IconFont
 import Tabman
 import RxSwift
 

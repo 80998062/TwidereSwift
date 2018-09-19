@@ -50,7 +50,7 @@ public final class ScaledFont {
         let fontName: String
     }
     
-    private typealias StyleDictionary = [UIFontTextStyle.RawValue: FontDescription]
+    private typealias StyleDictionary = [UIFont.TextStyle.RawValue: FontDescription]
     private var styleDictionary: StyleDictionary?
     
     /// Create a `ScaledFont`
@@ -82,7 +82,7 @@ public final class ScaledFont {
     /// - Note: If the style dictionary does not have
     ///   a font for this text style the default preferred
     ///   font is returned.
-    public func font(forTextStyle textStyle: UIFontTextStyle) -> UIFont {
+    public func font(forTextStyle textStyle: UIFont.TextStyle) -> UIFont {
         let fontDescription = styleDictionary?[textStyle.rawValue]
         if  fontDescription != nil{
             let font = UIFont(name: fontDescription!.fontName, size: fontDescription!.fontSize)

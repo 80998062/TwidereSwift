@@ -8,8 +8,8 @@
 
 import UIKit
 import PopMenu
-import YFIconFont
 import SwiftTheme
+import IconFont
 
 class TextFieldCell: UITableViewCell{
     required init?(coder aDecoder: NSCoder) {
@@ -17,7 +17,7 @@ class TextFieldCell: UITableViewCell{
     }
     
     public lazy var textField: KaedeTextField = {
-        let it = KaedeTextField(frame: CGRect.zero)
+        let it = KaedeTextField()
         it.placeholderColor = ThemeManager.color(for: "Text.colorSecondary")
         it.foregroundColor = ThemeManager.color(for: "List.itemBackground")
         it.backgroundColor = ThemeManager.color(for: "List.colorSeperator")
@@ -26,7 +26,7 @@ class TextFieldCell: UITableViewCell{
     }()
     
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: .zero)
         contentView.addSubview(textField)
@@ -52,7 +52,7 @@ class PopMenuCell: UITableViewCell{
         return it
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: CGRect.zero)
         accessoryView = indicator

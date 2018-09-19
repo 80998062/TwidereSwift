@@ -12,23 +12,23 @@ import ReSwiftRouter
 import PopMenu
 
 class OthersViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         clearsSelectionOnViewWillAppear = false
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: PopMenuCell.self)
     }
-
-
+    
+    
     private let sectionHeaders = ["Language"]
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionHeaders.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -36,7 +36,7 @@ class OthersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionHeaders[section]
     }
-
+    
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let it = view as? UITableViewHeaderFooterView{
@@ -74,7 +74,7 @@ class OthersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return .list_head_height
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
@@ -111,5 +111,28 @@ class OthersViewController: UITableViewController {
             //            sourceCopy?.accountType = it
             print("\(String(describing: action.title)) is selected")
         }
+    }
+}
+
+
+extension OthersViewController: StoreSubscriber{
+    typealias StoreSubscriberStateType = Others
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mainStore.subscribe(self){ state in
+            state.select{ $0.settingsState.others }
+        }
+    }
+    
+    func newState(state: Others) {
+        print("Current language: \(state.language)")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        mainStore.unsubscribe(self)
     }
 }

@@ -11,7 +11,7 @@ import SwiftTheme
 
 extension UILabel: ThemeObserver{
     
-    func updateScaledFont(forFontName name: String?,forFontStyle style: UIFontTextStyle){
+    func updateScaledFont(forFontName name: String?,forFontStyle style: UIFont.TextStyle){
         font = ScaledFont(fontName: name).font(forTextStyle: style)
         adjustsFontForContentSizeCategory = true
     }
@@ -20,7 +20,7 @@ extension UILabel: ThemeObserver{
         if let it = ThemeManager.string(for: "Text.font"){
             if font.fontName != it{
                 let style =  font.fontDescriptor.object(forKey: UIFontDescriptor.AttributeName.textStyle) as! String
-                updateScaledFont(forFontName: it, forFontStyle: UIFontTextStyle.init(style))
+                updateScaledFont(forFontName: it, forFontStyle: UIFont.TextStyle.init(rawValue: style))
             }
         }
     }
@@ -29,7 +29,7 @@ extension UILabel: ThemeObserver{
 
 extension UIButton: ThemeObserver{
     
-    func updateScaledFont(forFontName name: String?,forFontStyle style: UIFontTextStyle){
+    func updateScaledFont(forFontName name: String?,forFontStyle style: UIFont.TextStyle){
         titleLabel?.font = ScaledFont(fontName: name).font(forTextStyle: style)
         titleLabel?.adjustsFontForContentSizeCategory = true
     }
@@ -38,7 +38,7 @@ extension UIButton: ThemeObserver{
         if let it = ThemeManager.string(for: "Text.font"){
             if titleLabel?.font.fontName != it{
                 let style =  titleLabel?.font.fontDescriptor.object(forKey: UIFontDescriptor.AttributeName.textStyle) as! String
-                updateScaledFont(forFontName: it, forFontStyle: UIFontTextStyle.init(style))
+                updateScaledFont(forFontName: it, forFontStyle: UIFont.TextStyle.init(rawValue: style))
             }
         }
     }

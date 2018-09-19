@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var router: Router<AppState>!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         setupPalette()
         window = UIWindow(frame: UIScreen.main.bounds)
         /*
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 //        mainStore.dispatch(handleOpenU)
         return false
     }
@@ -84,7 +84,7 @@ extension AppDelegate{
         navigationBar.theme_barTintColor = "Theme.colorLight"
         let barButtonItem = UIBarButtonItem.appearance()
         barButtonItem.theme_tintColor = "Theme.colorAccent"
-        navigationBar.theme_titleTextAttributes = ThemeDictionaryPicker(keyPath: "Text.colorPrimary") { value -> [NSAttributedStringKey : AnyObject]? in
+        navigationBar.theme_titleTextAttributes = ThemeDictionaryPicker(keyPath: "Text.colorPrimary") { value -> [NSAttributedString.Key : AnyObject]? in
             guard let rgba = value as? String else {
                 return nil
             }
@@ -92,9 +92,9 @@ extension AppDelegate{
             let color = UIColor(rgba: rgba)
             let shadow = NSShadow(); shadow.shadowOffset = CGSize.zero
             let titleTextAttributes = [
-                NSAttributedStringKey.foregroundColor: color,
-                NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .subheadline),
-                NSAttributedStringKey.shadow: shadow
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline),
+                NSAttributedString.Key.shadow: shadow
             ]
             
             return titleTextAttributes

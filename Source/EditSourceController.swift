@@ -8,7 +8,7 @@
 
 import UIKit
 import PopMenu
-import YFIconFont
+import IconFont
 import RxSwift
 import ReSwiftRouter
 
@@ -57,7 +57,7 @@ class EditSourceController: UITableViewController {
         clearsSelectionOnViewWillAppear = false
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: PopMenuCell.self)
         register(tableView, cell: SwitchMenuCell.self)
         register(tableView, cell: TextFieldCell.self)

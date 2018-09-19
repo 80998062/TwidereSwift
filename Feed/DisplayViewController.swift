@@ -39,7 +39,7 @@ class DisplayViewController: UITableViewController{
         clearsSelectionOnViewWillAppear = false
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: SwitchMenuCell.self)
         register(tableView, cell: FontSizeCell.self)
         register(tableView, cell: StaticFeedCell.self)

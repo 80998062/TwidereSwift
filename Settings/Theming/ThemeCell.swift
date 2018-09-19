@@ -2,12 +2,12 @@
 //  ThemeCell.swift
 //  twidere
 //
-//  Created by 沈烨坷 on 2018/8/20.
+//  Created by 沈烨坷 on 2018/9/19.
 //  Copyright © 2018 Sinyuk. All rights reserved.
 //
 
 import UIKit
-import YFIconFont
+import IconFont
 
 class ThemeCell: UITableViewCell {
     private lazy var palette: UIStackView = {
@@ -56,7 +56,7 @@ class ThemeCell: UITableViewCell {
         return it
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // common setup
         selectedBackgroundView = UIView(frame: CGRect.zero)
@@ -88,7 +88,7 @@ class ThemeCell: UITableViewCell {
         palette.snp.makeConstraints{(make) -> Void in
             make.edges.equalTo(clipView)
         }
-
+        
         checkbox.addTarget(self, action: #selector(self.onChecked(_:)), for: .valueChanged)
         accessoryView = checkbox
     }

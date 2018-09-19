@@ -7,7 +7,7 @@
 //
 import UIKit
 import PopMenu
-import YFIconFont
+import IconFont
 
 enum LanguageType: String,CaseIterable {
     case zhHans, en , japanese

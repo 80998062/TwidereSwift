@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-import YFIconFont
+import IconFont
 import SwiftTheme
 import Tabman
 import Pageboy

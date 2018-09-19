@@ -8,7 +8,7 @@
 
 import UIKit
 import PopMenu
-import YFIconFont
+import IconFont
 
 enum AccountType: String,CaseIterable {
     case Twitter, Weibo , Fanfou
