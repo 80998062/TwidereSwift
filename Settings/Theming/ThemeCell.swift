@@ -52,7 +52,7 @@ class ThemeCell: UITableViewCell {
     }()
     
     public lazy var checkbox: SnapchatCheckbox = {
-        let it = SnapchatCheckbox(frame: CGRect(x: 0, y: 0, width: cellHeight, height: cellHeight))
+        let it = SnapchatCheckbox()
         return it
     }()
     

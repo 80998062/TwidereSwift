@@ -21,7 +21,6 @@
 		7E934DAC214BA4BA00FBE203 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */; };
 		7E934DAE214BA5E700FBE203 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DAD214BA5E700FBE203 /* Routes.swift */; };
 		7EA94BFB2133C79400C6E8D9 /* FontNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA94BFA2133C79400C6E8D9 /* FontNameViewController.swift */; };
-		7EB1DDB72133AEDE0016F370 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1DDB62133AEDE0016F370 /* GMStepper.swift */; };
 		7EBCF42D21256BDC002B96ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCF42C21256BDC002B96ED /* AppDelegate.swift */; };
 		7EBCF43421256BDE002B96ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EBCF43321256BDE002B96ED /* Assets.xcassets */; };
 		7EBCF43721256BDE002B96ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EBCF43521256BDE002B96ED /* LaunchScreen.storyboard */; };
@@ -109,7 +108,6 @@
 		7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		7E934DAD214BA5E700FBE203 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		7EA94BFA2133C79400C6E8D9 /* FontNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNameViewController.swift; sourceTree = "<group>"; };
-		7EB1DDB62133AEDE0016F370 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		7EBCF42921256BDC002B96ED /* twidere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twidere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBCF42C21256BDC002B96ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EBCF43321256BDE002B96ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -331,7 +329,6 @@
 			children = (
 				7EBCF4652126725B002B96ED /* SwitchMenuCell.swift */,
 				7ECD42722129D0DE00C2CDFA /* SnapchatCheckbox.swift */,
-				7EB1DDB62133AEDE0016F370 /* GMStepper.swift */,
 				7ED0D24221426CA5008C9993 /* TextFieldEffects.swift */,
 				7ED0D24421426CCA008C9993 /* KaedeTextField.swift */,
 			);
@@ -651,7 +648,6 @@
 			files = (
 				7EFCA69C2134669C00DE22AD /* SwiftyPlistManager.swift in Sources */,
 				7ECD4286212BF1AF00C2CDFA /* DisplayViewController.swift in Sources */,
-				7EB1DDB72133AEDE0016F370 /* GMStepper.swift in Sources */,
 				7ECD428E212C244000C2CDFA /* ScreenNameLabel.swift in Sources */,
 				7EBCF42D21256BDC002B96ED /* AppDelegate.swift in Sources */,
 				7ECD428A212BF45200C2CDFA /* FontSizeCell.swift in Sources */,

@@ -7,7 +7,6 @@ target 'twidere' do
   # Pods for twidere
   pod 'Tabman', '~> 1.0'
   pod 'SnapKit', '~> 4.0.0'
-#  pod 'YFIconFont' # https://github.com/Xiaoye220/IconFont
   pod 'NewPopMenu', '~> 2.0'
   pod 'ReSwift'
   pod 'ReSwiftRouter'
