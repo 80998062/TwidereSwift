@@ -24,8 +24,7 @@ let container: Container = Container(){ it in
     }
 }
 
-
-var mainStore = Store<AppState>(reducer: appReducer,state: nil)
+let mainStore = Store<AppState>(reducer: appReducer,state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var router: Router<AppState>!
 
-    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         setupPalette()
         window = UIWindow(frame: UIScreen.main.bounds)
         /*
@@ -50,17 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state.select{ $0.navigationState }
         }
         
-        print("?? \(String(describing: SettingsNavViewController.route()))")
         mainStore.dispatch(ReSwiftRouter.SetRouteAction([SettingsNavViewController.route()]))
         
         window?.makeKeyAndVisible()
         return true
-    }
-    
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//        mainStore.dispatch(handleOpenU)
-        return false
     }
    
 }
@@ -123,8 +115,8 @@ extension AppDelegate{
         field.backgroundColor = UIColor.clear
         field.layer.masksToBounds = true
         
-        let control = SnapchatCheckbox.appearance()
-        control.theme_tintColor = "Theme.colorAccent"
+//        let control = SnapchatCheckbox.appearance()
+//        control.theme_tintColor = "Theme.colorAccent"
         
         let listView = UITableView.appearance()
         listView.theme_separatorColor = "List.colorSeperator"

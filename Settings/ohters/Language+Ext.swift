@@ -10,13 +10,18 @@ import PopMenu
 import IconFont
 
 enum LanguageType: String,CaseIterable {
-    case zhHans, en , japanese
+    typealias Location = String
+    case zhHans = "zh-Hans", en , ja
     static func actions(didSelect handler: PopMenuAction.PopMenuActionHandler?) -> [PopMenuAction]{
         var actions = [PopMenuDefaultAction]()
         let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
-        for type in (LanguageType.allValues) {
-            actions.append(PopMenuDefaultAction(title: type.rawValue, image: icon, color: nil, didSelect: handler))
+        for type in (LanguageType.allCases) {
+            actions.append(PopMenuDefaultAction(title: type.localizable(), image: icon, color: nil, didSelect: handler))
         }
         return actions
+    }
+    
+    func localizable() -> String{
+        return NSLocalizedString(rawValue, comment: "Language name")
     }
 }

@@ -5,15 +5,14 @@ target 'twidere' do
   use_frameworks!
 
   # Pods for twidere
-  pod 'Tabman', '~> 1.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'NewPopMenu', '~> 2.0'
   pod 'ReSwift'
   pod 'ReSwiftRouter'
-  pod 'Swinject'
+  pod 'Swinject', '~> 2.5.0'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 3.10.0'
   
 #  target 'twidereTests' do
 #    inherit! :search_paths

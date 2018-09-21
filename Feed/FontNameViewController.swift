@@ -10,6 +10,7 @@ import UIKit
 import SwiftTheme
 import ReSwift
 import ReSwiftRouter
+import CC
 
 fileprivate class FontNameCell: UITableViewCell{
     

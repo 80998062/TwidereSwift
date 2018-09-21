@@ -1,12 +1,10 @@
 PODS:
-  - AutoInsetter (1.2.6)
   - NewPopMenu (2.1.1)
-  - Pageboy (2.5.4)
-  - Realm (3.9.0):
-    - Realm/Headers (= 3.9.0)
-  - Realm/Headers (3.9.0)
-  - RealmSwift (3.9.0):
-    - Realm (= 3.9.0)
+  - Realm (3.10.0):
+    - Realm/Headers (= 3.10.0)
+  - Realm/Headers (3.10.0)
+  - RealmSwift (3.10.0):
+    - Realm (= 3.10.0)
   - ReSwift (4.0.1)
   - ReSwiftRouter (0.6.0):
     - ReSwift (~> 4.0.0)
@@ -14,27 +12,21 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.3.0)
   - SnapKit (4.0.1)
-  - Swinject (2.4.1)
-  - Tabman (1.9.2):
-    - AutoInsetter (~> 1.2.0)
-    - Pageboy (~> 2.5.0)
+  - Swinject (2.5.0)
 
 DEPENDENCIES:
   - NewPopMenu (~> 2.0)
-  - RealmSwift
+  - RealmSwift (~> 3.10.0)
   - ReSwift
   - ReSwiftRouter
   - RxCocoa
   - RxSwift
   - SnapKit (~> 4.0.0)
-  - Swinject
-  - Tabman (~> 1.0)
+  - Swinject (~> 2.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AutoInsetter
     - NewPopMenu
-    - Pageboy
     - Realm
     - RealmSwift
     - ReSwift
@@ -43,22 +35,18 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - Swinject
-    - Tabman
 
 SPEC CHECKSUMS:
-  AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
   NewPopMenu: 60d67846a401964dcaa51bffb792f04f6fe2fc76
-  Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
-  Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
-  RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
+  Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
+  RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   ReSwiftRouter: 81f41b37a5dd1c88e1d3d10a660ff2dcc939ba7c
   RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
   RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  Swinject: f7f15a9672e99328c1f07f277091087917215700
-  Tabman: a09f7d7aa62b231ec475ca9eb9171f7cc973a3d7
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: cbc2309c80790d464efa61cac93b534238784960
+PODFILE CHECKSUM: 199c59248f7170d761eaab2df2adc2e5135c99cf
 
 COCOAPODS: 1.6.0.beta.1

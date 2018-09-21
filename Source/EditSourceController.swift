@@ -11,6 +11,7 @@ import PopMenu
 import IconFont
 import RxSwift
 import ReSwiftRouter
+import CC
 
 extension EditSourceController{
     func setupNavigationBar(){

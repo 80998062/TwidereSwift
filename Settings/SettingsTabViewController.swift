@@ -10,21 +10,18 @@ import UIKit
 import SnapKit
 import IconFont
 import SwiftTheme
-import Tabman
-import Pageboy
 import ReSwift
 
 
 
-class SettingsTabViewController: TabmanViewController{
+class SettingsTabViewController: UIPageViewController, UIPageViewControllerDelegate{
     
-    fileprivate lazy var tabItemProvider: TabItemsProvider =
-        TabItemsProvider(context: self)
-    
-    public var primaryIndex:Int = 0
+    fileprivate let tabItemProvider = TabItemsProvider(context: self)
+
+    private var primaryIndex:Int = 0
     
     convenience init(forPrimaryItem index: Int?){
-        self.init(nibName: nil, bundle: nil)
+        self.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         if index != nil{
             primaryIndex = index!
         }
@@ -32,45 +29,17 @@ class SettingsTabViewController: TabmanViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isInfiniteScrollEnabled = false
-        isScrollEnabled = false
         setupBarButtons()
-        bar.appearance = TabmanBar.Appearance({ (it) in
-            customize(it)
-            theming(it)
-        })
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didThemeSwitched), name:  NSNotification.Name(rawValue: ThemeUpdateNotification), object: nil)
         dataSource = self
+        delegate = self
+        setViewControllers([tabItemProvider.viewControllers[primaryIndex]],
+                           direction: .forward,
+                           animated: true,
+                           completion: nil)
     }
     
 }
 
-extension SettingsTabViewController: ThemeObserver{
-    @objc dynamic func didThemeSwitched() {
-        bar.appearance = TabmanBar.Appearance({ (it) in
-            customize(it)
-            theming(it)
-        })
-    }
-    
-    func customize(_ appearance: TabmanBar.Appearance?) -> Void {
-        appearance?.indicator.isProgressive = true
-        appearance?.indicator.bounces  = true
-        appearance?.indicator.lineWeight = .thick
-        appearance?.interaction.isScrollEnabled = true
-        appearance?.layout.itemVerticalPadding = 15.0
-        appearance?.layout.interItemSpacing = 20.0
-        appearance?.layout.edgeInset = 15.0
-        appearance?.style.showEdgeFade = true
-    }
-    
-    func theming(_ appearance: TabmanBar.Appearance?) -> Void {
-        appearance?.indicator.color = ThemeManager.color(for: "Theme.colorAccent")
-        appearance?.state.selectedColor = ThemeManager.color(for: "Control.colorNormal")
-        appearance?.state.color = ThemeManager.color(for: "Control.colorDisable")
-        appearance?.style.background = .solid(color: ThemeManager.color(for: "Theme.colorLight")!)
-    }
-}
 
 extension SettingsTabViewController: StoreSubscriber{
     typealias StoreSubscriberStateType = Any?
@@ -101,19 +70,27 @@ extension SettingsTabViewController{
 
 
 
-extension SettingsTabViewController: PageboyViewControllerDataSource {
-    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        bar.items = tabItemProvider.items
-        let it = tabItemProvider.viewControllers.count
-        return it
+extension SettingsTabViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if let index = tabItemProvider.viewControllers.firstIndex(of: viewController), index < tabItemProvider.viewControllers.endIndex {
+            return tabItemProvider.viewControllers[index + 1]
+        }
+        return nil
     }
     
-    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
-        return tabItemProvider.viewControllers[index]
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if let index = tabItemProvider.viewControllers.firstIndex(of: viewController), index > 0 {
+            return tabItemProvider.viewControllers[index - 1]
+        }
+        return nil
     }
     
-    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: primaryIndex)
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return primaryIndex
+    }
+
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return tabItemProvider.viewControllers.count
     }
     
 }

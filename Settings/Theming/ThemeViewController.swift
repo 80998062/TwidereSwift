@@ -9,6 +9,7 @@
 import UIKit
 import SwiftTheme
 import ReSwift
+import CC
 
 
 class ThemeViewController: UITableViewController {

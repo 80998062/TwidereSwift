@@ -10,12 +10,12 @@ import UIKit
 import PopMenu
 import IconFont
 
-enum AccountType: String,CaseIterable {
+enum AccountType: String, CaseIterable {
     case Twitter, Weibo , Fanfou
     static func actions(didSelect handler: PopMenuAction.PopMenuActionHandler?) -> [PopMenuAction]{
         var actions = [PopMenuDefaultAction]()
         let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
-        for type in (AccountType.allValues) {
+        for type in (AccountType.allCases) {
             actions.append(PopMenuDefaultAction(title: type.rawValue, image: icon, color: nil, didSelect: handler))
         }
         return actions
@@ -27,7 +27,7 @@ enum AuthType: String, CaseIterable {
     static func actions(didSelect handler: PopMenuAction.PopMenuActionHandler?) -> [PopMenuAction]{
         var actions = [PopMenuDefaultAction]()
         let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
-        for type in (AuthType.allValues) {
+        for type in (AuthType.allCases) {
             actions.append(PopMenuDefaultAction(title: type.rawValue, image: icon, color: nil, didSelect: handler))
         }
         return actions

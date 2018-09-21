@@ -8,6 +8,7 @@
 
 import UIKit
 import IconFont
+import CC
 
 class ThemeCell: UITableViewCell {
     private lazy var palette: UIStackView = {
@@ -52,7 +53,7 @@ class ThemeCell: UITableViewCell {
     }()
     
     public lazy var checkbox: SnapchatCheckbox = {
-        let it = SnapchatCheckbox()
+        let it = SnapchatCheckbox(frame: CGRect(x: 0, y: 0, width: cellHeight, height: cellHeight))
         return it
     }()
     

@@ -10,6 +10,7 @@ import UIKit
 import ReSwift
 import ReSwiftRouter
 import PopMenu
+import CC
 
 class OthersViewController: UITableViewController {
     
@@ -105,9 +106,6 @@ class OthersViewController: UITableViewController {
     
     private let languageTypeHandler: PopMenuAction.PopMenuActionHandler = { action in
         if nil != action.title{
-            guard let it = LanguageType(rawValue: action.title!) else{
-                fatalError()
-            }
             //            sourceCopy?.accountType = it
             print("\(String(describing: action.title)) is selected")
         }

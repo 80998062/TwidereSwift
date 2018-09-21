@@ -1,8 +1,8 @@
 /* 
-  Settings.strings
+  Localizable.strings
   Twidere
 
-  Created by 沈烨坷 on 2018/9/11.
+  Created by 沈烨坷 on 2018/9/21.
   Copyright © 2018 Sinyuk. All rights reserved.
 */
 
@@ -22,3 +22,9 @@
 "others" = "其他";
 "about" = "关于";
 "license" = "证书";
+
+
+// 语言
+"zh-Hans" = "中文(简体)";
+"en" = "英语";
+"ja" = "日语";

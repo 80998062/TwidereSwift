@@ -1,8 +1,8 @@
 //
-//  File.swift
-//  twidere
+//  TT.swift
+//  CC
 //
-//  Created by 沈烨坷 on 2018/9/7.
+//  Created by 沈烨坷 on 2018/9/21.
 //  Copyright © 2018 Sinyuk. All rights reserved.
 //
 
@@ -21,15 +21,6 @@ extension String {
  A TextFieldEffects object is a control that displays editable text and contains the boilerplates to setup unique animations for text entry and display. You typically use this class the same way you use UITextField.
  */
 open class TextFieldEffects : UITextField {
-    
-    @objc public override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    @objc public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     /**
      The type of animation a TextFieldEffect can perform.
      
@@ -49,7 +40,7 @@ open class TextFieldEffects : UITextField {
     /**
      UILabel that holds all the placeholder information
      */
-    public let placeholderLabel = UILabel(frame: .zero)
+    public let placeholderLabel = UILabel()
     
     /**
      Creates all the animations that are used to leave the textfield in the "entering text" state.

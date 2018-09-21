@@ -7,7 +7,6 @@
 //
 
 import ReSwiftRouter
-import Pageboy
 
 func RouteNotFound(identifierFor route: RouteElementIdentifier? = nil) -> Never{
     fatalError("Route not found: \(String(describing: route))")
@@ -64,7 +63,7 @@ extension SettingsNavViewController: Routable{
     func pushRouteSegment(_ routeElementIdentifier: RouteElementIdentifier, animated: Bool, completionHandler: @escaping RoutingCompletionHandler) -> Routable {
         switch routeElementIdentifier {
         case SettingsTabViewController.route():
-            let it = SettingsTabViewController(forPrimaryItem: 0)
+            let it = SettingsTabViewController(forPrimaryItem: 1)
             self.viewControllers = [it]
             completionHandler()
             return it

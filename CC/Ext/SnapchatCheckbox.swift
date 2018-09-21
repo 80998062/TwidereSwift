@@ -8,11 +8,11 @@
 
 import UIKit
 
-@IBDesignable final class SnapchatCheckbox: UIControl {
+@IBDesignable open class SnapchatCheckbox: UIControl {
     
-    private(set) var isChecked: Bool = false
+    public var isChecked: Bool = false
     
-    func setChecked(_ checked: Bool, animated: Bool = false) {
+    public func setChecked(_ checked: Bool, animated: Bool = false) {
         let fromValue: Float = isChecked ? 1 : 0
         let toValue: Float = isChecked ? 0 : 1
         if animated {
@@ -27,17 +27,17 @@ import UIKit
         isChecked = checked
     }
     
-     init() {
-        super.init(frame: .zero)
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         configure()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configure()
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override var tintColor: UIColor!{
+    
+    override open var tintColor: UIColor!{
         didSet{
             layer.borderColor = tintColor.cgColor
             shapeLayer.fillColor = tintColor.cgColor
@@ -55,13 +55,13 @@ import UIKit
     
     // MARK: - Appearance
     
-    override var isHighlighted: Bool {
+    override open var isHighlighted: Bool {
         didSet {
             backgroundColor = isHighlighted ? tintColor.withAlphaComponent(0.2) : .clear
         }
     }
     
-    override var clipsToBounds: Bool {
+    override open var clipsToBounds: Bool {
         didSet {
             // workaround
             if !clipsToBounds {
@@ -95,13 +95,13 @@ import UIKit
     
     // MARK: - Auto Layout
     
-    override var intrinsicContentSize: CGSize {
+    override open var intrinsicContentSize: CGSize {
         return CGSize(width: 40, height: 40)
     }
     
     // MARK: - Tracking
     
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+    override open func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         super.endTracking(touch, with: event)
         if let touchLocation = touch?.location(in: self), bounds.contains(touchLocation) {
             setChecked(!isChecked, animated: true)
@@ -111,7 +111,7 @@ import UIKit
     
     // MARK: - Interface Builder
     
-    override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setNeedsDisplay()
     }

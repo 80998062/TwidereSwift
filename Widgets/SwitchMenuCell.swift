@@ -8,12 +8,11 @@
 
 import UIKit
 
-class SwitchMenuCell: UITableViewCell {
+public class SwitchMenuCell: UITableViewCell {
 
     private var toggle: UISwitch = {
         let it = UISwitch(frame: CGRect.zero)
         it.isOn = false
-//        it.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
         return it
     }()
     
@@ -47,7 +46,5 @@ class SwitchMenuCell: UITableViewCell {
         }
         
         toggle.isOn = isOn
-        
-      
     }
 }

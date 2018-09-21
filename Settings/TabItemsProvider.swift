@@ -8,7 +8,6 @@
 
 import UIKit
 import IconFont
-import Tabman
 import RxSwift
 
 fileprivate enum Tabs : String, CaseIterable{
@@ -37,22 +36,13 @@ fileprivate enum Tabs : String, CaseIterable{
 
 class TabItemsProvider {
     
-    public let viewControllers: [UIViewController]
-    
-    typealias Item = TabmanBar.Item
-    
-    public let items: [Item]
+    public var viewControllers: [UIViewController]
     
     private let context: Any?
     
     init(context: Any?) {
         self.context = context
-        self.items = Tabs.allValues.map{ route in
-            Item(title: route.localized(),
-                 image: UIImage.iconFont(imageSize: .icon_nav, icon: FontAwesome.github), context: context)
-        }
-        
-        self.viewControllers = Tabs.allValues.map{ route in
+        self.viewControllers = Tabs.allCases.map{ route in
             switch route{
             case .theme:
                 return ThemeViewController()
