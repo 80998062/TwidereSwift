@@ -14,7 +14,7 @@ import CC
 
 class ThemeViewController: UITableViewController {
     
-    private let themes: [AppTheme] = [AppTheme.Classic,AppTheme.PinkPower]
+    private let themes: [AppTheme] = AppTheme.allCases
     private lazy var colors: [[UIColor]] = themes.compactMap{ it -> [UIColor] in
         return it.colors()
     }
@@ -47,6 +47,9 @@ class ThemeViewController: UITableViewController {
         tableView.estimatedRowHeight = 56
         tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: ThemeCell.self)
+        
+        //
+        addLanguageObserver(observer: self, selector: #selector(self.didLanguageChanged))
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,7 +71,7 @@ class ThemeViewController: UITableViewController {
     }
     
     private func tryToSwitchTheme(from oldTheme: AppTheme, to newTheme: AppTheme) -> Void{
-        SwiftyPlistManager.shared.save(newTheme.rawValue, forKey: "ThemeName", toPlistWithName: "Prefs") { (err) in
+        SwiftyPlistManager.shared.save(newTheme.rawValue, forKey: "ThemeName", toPlistWithName: "Preferences") { (err) in
             if err == nil {
                 ThemeManager.setTheme(plistName: newTheme.rawValue, path: .mainBundle)
                 self.selected = themes.index(of: newTheme)
@@ -77,5 +80,13 @@ class ThemeViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
+    }
+}
+
+
+extension ThemeViewController: LanguageObserver {
+    
+    @objc dynamic func didLanguageChanged(){
+        tableView.reloadData()
     }
 }

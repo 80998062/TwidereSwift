@@ -31,11 +31,10 @@ struct Theme {
 }
 
 struct Display {
-    public static let _default = Display(fontName: "b")
+    public static let _default = Display(fontName: "System")
     var fontName: String
 }
 
 struct Others {
-    public static let _default = Others(language: "c")
-    var language: String
+    public static let _default = Others()
 }

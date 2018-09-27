@@ -11,8 +11,12 @@ import ReSwift
 import ReSwiftRouter
 import PopMenu
 import CC
+import Localize
+import RxSwift
 
 class OthersViewController: UITableViewController {
+    
+    fileprivate var currentLanguage: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +25,11 @@ class OthersViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: PopMenuCell.self)
+        currentLanguage = Localize.currentLanguage()
+        
+        //
+        addLanguageObserver(observer: self, selector: #selector(self.didLanguageChanged))
     }
-    
     
     private let sectionHeaders = ["Language"]
     
@@ -35,7 +42,7 @@ class OthersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionHeaders[section]
+        return sectionHeaders[section].localized()
     }
     
     
@@ -65,7 +72,7 @@ class OthersViewController: UITableViewController {
     private let sectionFooters = ["The changes will take effect when the app is restarted"]
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return sectionFooters[section]
+        return sectionFooters[section].localized()
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -82,7 +89,8 @@ class OthersViewController: UITableViewController {
         switch section {
         case 0:
             let cell = dequeue(tableView, cell: PopMenuCell.self, indexPath: indexPath)
-            cell.textLabel?.text = "Chinese(Simplify)"
+            let name = currentLanguage == nil ? nil : Localize.displayNameForLanguage(currentLanguage!)
+            cell.textLabel?.text = name
             return cell
         default:
             fatalError()
@@ -96,7 +104,7 @@ class OthersViewController: UITableViewController {
         switch section {
         case 0:
             let cell = tableView.cellForRow(at: indexPath) as? PopMenuCell
-            manager.actions = LanguageType.actions(didSelect: languageTypeHandler)
+            manager.actions = languagePopMenuActions(handler: willSwitchLanguage)
             manager.present(sourceView: cell?.indicator, on: self, animated: true, completion: nil)
             break
         default:
@@ -104,12 +112,21 @@ class OthersViewController: UITableViewController {
         }
     }
     
-    private let languageTypeHandler: PopMenuAction.PopMenuActionHandler = { action in
-        if nil != action.title{
-            //            sourceCopy?.accountType = it
-            print("\(String(describing: action.title)) is selected")
+    
+     /// will switch language
+     ///
+     /// - Parameter action: action
+     @objc dynamic func willSwitchLanguage(action: PopMenuAction) -> Void{
+        guard let title = action.title else{ fatalError() }
+        guard  let index = languageDisplayNames().firstIndex(of: title) else{ fatalError() }
+        
+        let newValue = Localize.availableLanguages()[index]
+        if newValue != currentLanguage{
+            Localize.setCurrentLanguage(newValue)
+            currentLanguage = newValue
         }
     }
+    
 }
 
 
@@ -125,12 +142,19 @@ extension OthersViewController: StoreSubscriber{
     }
     
     func newState(state: Others) {
-        print("Current language: \(state.language)")
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         mainStore.unsubscribe(self)
+    }
+}
+
+
+extension OthersViewController: LanguageObserver{
+    @objc dynamic func didLanguageChanged(){
+        tableView.reloadData()
     }
 }

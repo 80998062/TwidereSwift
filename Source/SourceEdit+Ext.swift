@@ -10,18 +10,19 @@ import UIKit
 import PopMenu
 import SwiftTheme
 import IconFont
+import CC
 
 class TextFieldCell: UITableViewCell{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public lazy var textField: UITextField = {
-        let it = UITextField()
-//        it.placeholderColor = ThemeManager.color(for: "Text.colorSecondary")
-//        it.foregroundColor = ThemeManager.color(for: "List.itemBackground")
-//        it.backgroundColor = ThemeManager.color(for: "List.colorSeperator")
-//        it.clearButtonMode = .never
+    public lazy var textField: KaedeTextField = {
+        let it = KaedeTextField()
+        it.placeholderColor = ThemeManager.color(for: "Text.colorSecondary")
+        it.foregroundColor = ThemeManager.color(for: "List.itemBackground")
+        it.backgroundColor = ThemeManager.color(for: "List.colorSeperator")
+        it.clearButtonMode = .never
         return it
     }()
     

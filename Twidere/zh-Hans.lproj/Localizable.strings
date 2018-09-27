@@ -6,6 +6,36 @@
   Copyright © 2018 Sinyuk. All rights reserved.
 */
 
+// !MARK: start of labels
+
+"Settings" = "设置";
+"FontName" = "字体";
+"Display" = "显示";
+"Media Previews" = "媒体预览";
+"Hide Actions" = "隐藏工具栏";
+"Sound" = "声音";
+"Sound Effects" = "音效";
+"Language" = "语言";
+
+// end of labels
+
+// !MARK: start of actions
+"Done" = "完成";
+"Cancel" = "取消";
+// end of actions
+
+// !MARK: start of captions
+"The changes will take effect when the app is restarted" = "重启后生效";
+// end of captions
+
+
+
+// !MARK: start of theme names
+"Classic" = "经典蓝";
+"PinkPower" = "粉色原力";
+// end of theme names
+
+
 "login" = "登录";
 "theme" = "主题";
 "display" = "显示";
@@ -22,9 +52,3 @@
 "others" = "其他";
 "about" = "关于";
 "license" = "证书";
-
-
-// 语言
-"zh-Hans" = "中文(简体)";
-"en" = "英语";
-"ja" = "日语";

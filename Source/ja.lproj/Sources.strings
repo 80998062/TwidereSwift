@@ -1,0 +1,21 @@
+/* 
+  Hints.strings
+  Twidere
+
+  Created by 沈烨坷 on 2018/9/26.
+  Copyright © 2018 Sinyuk. All rights reserved.
+*/
+"Twitter" = "推特";
+"Weibo" = "微博";
+"Fanfou" = "饭否";
+
+
+"API URL" = "接口端点";
+"Account Type" = "账号类型";
+"Auth Type" = "授权方式";
+"Consumer Identity" = "身份验证";
+"URL Format" = "URL格式";
+"Version Suffix" = "添加API版本";
+"Use same URL for OAuth signing" = "使用相同URL签名"
+"Consumer Key" = "Consumer Key"
+"Consumer Secret" = "Consumer Secret"

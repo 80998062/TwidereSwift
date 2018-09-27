@@ -28,7 +28,7 @@ import UIKit
      
      This property determines the size of the placeholder label relative to the font size of the text field.
      */
-    @IBInspectable dynamic open var placeholderFontScale: CGFloat = 0.8 {
+    @IBInspectable dynamic open var placeholderFontScale: CGFloat = 0.9 {
         didSet {
             updatePlaceholder()
         }

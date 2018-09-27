@@ -8,23 +8,16 @@
 
 import UIKit
 import SwiftTheme
+import CC
 
 protocol ThemeObserver {
     func didThemeSwitched()
 }
 
-enum AppTheme: String {
+enum AppTheme: String, CaseIterable{
     
-    case Classic, Dark, LadiesNight, PinkPower, YourName
-    
-    public func allValues() -> [AppTheme]{
-        return [AppTheme.Classic,
-                AppTheme.Dark,
-                AppTheme.LadiesNight,
-                AppTheme.PinkPower,
-                AppTheme.YourName]
-    }
-    
+    case Classic,PinkPower
+//    YourName, Dark, LadiesNight,
     public func colors() -> [UIColor]{
         return provideThemeColors(self)
     }
@@ -50,4 +43,13 @@ enum AppTheme: String {
         }
         return colors
     }
+}
+
+
+public func currentThemeName() -> String?{
+    guard let fontName = SwiftyPlistManager.shared.fetchValue(for: "ThemeName", fromPlistWithName: "Preferences") else {
+        return nil
+    }
+    
+    return fontName as? String
 }

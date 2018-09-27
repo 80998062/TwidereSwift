@@ -6,6 +6,35 @@
   Copyright © 2018 Sinyuk. All rights reserved.
 */
 
+// !MARK: start of labels
+
+"Settings" = "Settings";
+"FontName" = "FontName";
+"Display" = "Display";
+"Media Previews" = "Media Previews";
+"Hide Actions" = "HideActions";
+"Sound" = "Sound";
+"Sound Effects" = "SoundEffects";
+"Language" = "Language";
+
+// end of labels
+
+// !MARK: start of actions
+"Done" = "Done";
+"Cancel" = "Cancel";
+// end of actions
+
+// !MARK: start of captions
+"The changes will take effect when the app is restarted" = "The changes will take effect when the app is restarted";
+// end of captions
+
+
+
+// !MARK: start of theme names
+"Classic" = "Classic";
+"PinkPower" = "PinkPower";
+// end of theme names
+
 "login" = "Login";
 "theme" = "Theme";
 "display" = "Display";
@@ -22,10 +51,5 @@
 "others" = "Others";
 "about" = "About";
 "license" = "License";
-
-// Language
-"zh-Hans" = "Chinese(Simple)";
-"en" = "English";
-"ja" = "Japanese";
 
 

@@ -16,27 +16,41 @@ enum AccountType: String, CaseIterable {
         var actions = [PopMenuDefaultAction]()
         let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
         for type in (AccountType.allCases) {
-            actions.append(PopMenuDefaultAction(title: type.rawValue, image: icon, color: nil, didSelect: handler))
+            actions.append(PopMenuDefaultAction(title: type.rawValue.localized(), image: icon, color: nil, didSelect: handler))
         }
         return actions
     }
 }
 
 enum AuthType: String, CaseIterable {
-    case Basic, OAuth , OAuth2 , xAuth
+    case Basic, OAuth , OAuth2 , xAuth , twipO
     static func actions(didSelect handler: PopMenuAction.PopMenuActionHandler?) -> [PopMenuAction]{
         var actions = [PopMenuDefaultAction]()
-        let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
         for type in (AuthType.allCases) {
-            actions.append(PopMenuDefaultAction(title: type.rawValue, image: icon, color: nil, didSelect: handler))
+            actions.append(PopMenuDefaultAction(title: type.rawValue, image: nil, color: nil, didSelect: handler))
         }
         return actions
     }
     
 }
 
+enum URLMasks: String{
+    typealias RawValue = String
+    case TwitterURL = "https://[DOMAIN].twitter.com/"
+    case FanfouURL = "https://api.fanfou.com/"
+}
+
 struct Source{
-    var url: URL
+    public static let _default = Source(uniqueId: Date().description,
+                                        url: URLMasks.TwitterURL.rawValue,
+                                        urlForSigning: false,
+                                        versionSuffix: false,
+                                        accountType: AccountType.Twitter,
+                                        authTypes: AuthType.Basic,
+                                        consumer: nil)
+    
+    var uniqueId:String
+    var url: String
     var urlForSigning: Bool?
     var versionSuffix: Bool?
     var accountType: AccountType

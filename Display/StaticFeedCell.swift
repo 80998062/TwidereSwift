@@ -23,8 +23,8 @@ class StaticFeedCell: UITableViewCell, ThemeObserver{
         return it
     }()
     
-    private lazy var screenName: ScreenNameLabel = {
-        let it = ScreenNameLabel(frame: CGRect.zero)
+    private lazy var screenName: UILabel = {
+        let it = UILabel(frame: CGRect.zero)
         it.text = "Sinyuk"
         it.theme_textColor = "Text.colorPrimary"
         it.theme_backgroundColor = "List.itemBackground"
@@ -44,16 +44,14 @@ class StaticFeedCell: UITableViewCell, ThemeObserver{
     private lazy var dropdown: IdLabel = {
         let it = IdLabel(frame: CGRect.zero)
         it.iconFont(size: screenName.font.pointSize, icon: FontAwesome.chevrondown,color: ThemeManager.color(for: "Control.colorNormal"))
+        it.sizeToFit()
         return it
     }()
     
     private lazy var contentTextView: ContentTextView = {
         let it = ContentTextView(frame: CGRect.zero)
-        it.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at metus in mauris fermentum laoreet ac a mi. Pellentesque commodo efficitur lacus, vitae interdum nunc tempus sed. "
-         it.theme_textColor = "Text.colorPrimary"
-         it.theme_backgroundColor = "List.itemBackground"
-         it.lineBreakMode = .byWordWrapping
-         it.numberOfLines = 0
+        it.numberOfLines = 0
+        it.lineBreakMode = .byWordWrapping
         it.sizeToFit()
         return it
     }()
@@ -113,5 +111,9 @@ class StaticFeedCell: UITableViewCell, ThemeObserver{
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func bind(){
+        contentTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at metus in mauris fermentum laoreet ac a mi. Pellentesque commodo efficitur lacus, vitae interdum nunc tempus sed. "
     }
 }

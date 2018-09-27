@@ -20,19 +20,19 @@ class SourceCell: UITableViewCell {
     
     private lazy var screenNameLabel: UILabel = {
         let it = UILabel(frame: CGRect.zero)
-//        it.theme_textColor = "Text.colorPrimary"
-//        it.font = scaledFont.font(forTextStyle: .subheadline)
+        it.theme_textColor = "Text.colorPrimary"
+        it.updateScaledFont(nil, .footnote)
         it.theme_backgroundColor = "List.itemBackground"
-//        it.sizeToFit()
+        it.sizeToFit()
         return it
     }()
     
     private lazy var idLabel: UILabel = {
         let it = UILabel(frame: CGRect.zero)
-//        it.theme_textColor = "Text.colorSecondary"
-//        it.font = scaledFont.font(forTextStyle: .footnote)
+        it.theme_textColor = "Text.colorSecondary"
+        it.updateScaledFont(nil, .caption1)
         it.theme_backgroundColor = "List.itemBackground"
-//        it.sizeToFit()
+        it.sizeToFit()
         return it
     }()
     
@@ -82,10 +82,4 @@ class SourceCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-}
-
-extension SourceCell: ThemeObserver{
-    func didThemeSwitched() {
-        
-    }
 }

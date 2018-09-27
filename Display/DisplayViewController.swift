@@ -13,24 +13,19 @@ import ReSwiftRouter
 import CC
 
 class DisplayViewController: UITableViewController{
-    
-    
-    fileprivate let Options = ["Preview",
+    fileprivate let Options = ["Display",
                                "FontSize",
                                "FontName",
-                               "MediaPreviews",
-                               "HideActions",
-                               "SoundEffects"]
+                               "Media Previews",
+                               "Hide Actions",
+                               "Sound Effects"]
     
     fileprivate var fontName: String? {
         didSet{
-            guard let section =  Options.index(of: "FontName")else{
+            guard let section = Options.index(of: "FontName")else{
                 fatalError()
             }
-            let index = IndexPath.init(row: 0, section: section)
-            if let it = (tableView.cellForRow(at: index) as? SelectedFontCell){
-                it.fontName = self.fontName
-            }
+            tableView.reloadSections([section], with: .automatic)
         }
     }
     
@@ -45,9 +40,11 @@ class DisplayViewController: UITableViewController{
         register(tableView, cell: FontSizeCell.self)
         register(tableView, cell: StaticFeedCell.self)
         register(tableView, cell: SelectedFontCell.self)
+        self.fontName = currentFontName()
         
-        
-        self.fontName = SwiftyPlistManager.shared.fetchValue(for: "FontName", fromPlistWithName: "Prefs") as? String
+        //
+        addFontNameObserver(observer: self, selector: #selector(self.didFontNameChanged))
+        addLanguageObserver(observer: self, selector: #selector(self.didLanguageChanged))
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,16 +88,16 @@ class DisplayViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         let title = Options[section]
-        return title == "HideActions" ?  nil : " "
+        return title == "Hide Actions" ?  nil : " "
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let title = Options[section]
         switch title {
-        case "Preview":
-            return "Display"
-        case "SoundEffects":
-            return "Sound"
+        case "Display":
+            return "Display".localized()
+        case "Sound Effects":
+            return "Sound".localized()
         default:
             return nil
         }
@@ -110,24 +107,23 @@ class DisplayViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let title = Options[indexPath.section]
         switch title{
-        case "Preview":
+        case "Display":
             let cell = dequeue(tableView, cell: StaticFeedCell.self, indexPath: indexPath)
+            cell.bind()
             return cell
         case "FontSize":
             let cell = dequeue(tableView, cell: FontSizeCell.self, indexPath: indexPath)
             return cell
         case "FontName":
             let cell = dequeue(tableView, cell: SelectedFontCell.self, indexPath: indexPath)
-            cell.fontName = self.fontName
+            cell.bind(fontName: self.fontName)
             return cell
-        case "MediaPreviews", "HideActions","SoundEffects":
+        case "Media Previews", "Hide Actions","Sound Effects":
             let cell = dequeue(tableView, cell: SwitchMenuCell.self, indexPath: indexPath)
-            cell.bind(title: title, subTitle: nil, isOn: true)
+            cell.bind(title: title.localized(), subTitle: nil, isOn: true)
             return cell
         default:
-            let cell = dequeue(tableView, cell: SwitchMenuCell.self, indexPath: indexPath)
-            cell.bind(title: "Section: \(indexPath.section)", subTitle: nil, isOn: true)
-            return cell
+            fatalError()
         }
     }
     
@@ -145,6 +141,22 @@ class DisplayViewController: UITableViewController{
         }
     }
 }
+
+extension DisplayViewController: FontNameObserver , LanguageObserver {
+    
+    @objc dynamic func didFontNameChanged(notification: NSNotification) {
+        if let newFontName = notification.userInfo?["FontName"] as? String{
+            if newFontName != fontName{
+                fontName = newFontName
+            }
+        }
+    }
+    
+    @objc dynamic func didLanguageChanged(){
+        tableView.reloadData()
+    }
+}
+
 
 
 

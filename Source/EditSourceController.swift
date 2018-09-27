@@ -9,9 +9,9 @@
 import UIKit
 import PopMenu
 import IconFont
-import RxSwift
 import ReSwiftRouter
 import CC
+import ReSwift
 
 extension EditSourceController{
     func setupNavigationBar(){
@@ -29,27 +29,48 @@ extension EditSourceController{
         navigationController?.popViewController(animated: true)
     }
     
-    
-    
     @objc dynamic func onScanQRCode(){
         print("onScanQRCode")
     }
 }
 
 
-
-class EditSourceController: UITableViewController {
+// When language changed
+extension EditSourceController: LanguageObserver {
     
-    fileprivate var sourceCopy: Source?{
-        didSet{
-            tableView.reloadData()
+    @objc dynamic func didLanguageChanged(){
+        tableView.reloadData()
+    }
+}
+
+extension EditSourceController: StoreSubscriber{
+    typealias StoreSubscriberStateType = Others
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mainStore.subscribe(self){ state in
+            state.select{ $0.settingsState.others }
         }
     }
     
-    convenience init(source: Source?){
+    func newState(state: Others) {
+        
+    }
+}
+
+class EditSourceController: UITableViewController{
+    
+    fileprivate var sourceCopy: Source? = nil
+    
+    convenience init(uniqueId: String?){
         self.init(nibName: nil, bundle: nil)
-        if nil == source{
-            self.sourceCopy = source
+        if nil != uniqueId{
+            
+        }else{
+            // 加载默认配置
+            sourceCopy = Source._default
+            tableView.reloadData()
         }
     }
     
@@ -63,16 +84,19 @@ class EditSourceController: UITableViewController {
         register(tableView, cell: SwitchMenuCell.self)
         register(tableView, cell: TextFieldCell.self)
         
+        //
+        addLanguageObserver(observer: self, selector: #selector(self.didLanguageChanged))
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitles.count
     }
     
-    private let sectionTitles = ["API URL",nil,"Account Type","Auth Type",nil,"Consumer Identity",nil,]
+    private let sectionTitles = ["API URL",nil,"Account Type","Auth Type",nil,"Consumer Identity",nil]
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        let title = sectionTitles[section]
+        return title == nil ? nil : title?.localized()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,12 +142,11 @@ class EditSourceController: UITableViewController {
         switch section {
         case 0:
             let cell = dequeue(tableView, cell: TextFieldCell.self, indexPath: indexPath)
-            let hint = "URL Format"
-            cell.textField.placeholder = hint
+            cell.textField.placeholder = "URL Format".localized()
             return cell
         case 1:
             let cell = dequeue(tableView, cell: SwitchMenuCell.self, indexPath: indexPath)
-            cell.bind(title: "Version Suffix", subTitle: nil, isOn: false)
+            cell.bind(title: "Version Suffix".localized(), subTitle: nil, isOn: false)
             return cell
         case 2:
             let cell = dequeue(tableView, cell: PopMenuCell.self, indexPath: indexPath)
@@ -177,20 +200,19 @@ class EditSourceController: UITableViewController {
     
     private let accoutTypeHandler: PopMenuAction.PopMenuActionHandler = { action in
         if nil != action.title{
-            guard let it = AccountType(rawValue: action.title!) else{
-                fatalError()
+            var selected: AccountType? = nil
+            for type in AccountType.allCases{
+                if type.rawValue.localized() == action.title{
+                    selected = type
+                    break
+                }
             }
-//            sourceCopy?.accountType = it
-            print("\(String(describing: action.title)) is selected")
         }
     }
     
-    
     private let authTypeHandler: PopMenuAction.PopMenuActionHandler = { action in
         if nil != action.title{
-            guard let it = AuthType(rawValue: action.title!) else{
-                fatalError()
-            }
+           
             //            sourceCopy?.accountType = it
             print("\(String(describing: action.title)) is selected")
         }
@@ -198,6 +220,8 @@ class EditSourceController: UITableViewController {
     
     
     override func viewWillDisappear(_ animated: Bool) {
+        mainStore.unsubscribe(self)
+        
         // Required to update the route, when this VC was dismissed through back button from
         // NavigationController, since we can't intercept the back button
         if mainStore.state.navigationState.route ==

@@ -9,6 +9,7 @@
 import UIKit
 import IconFont
 import CC
+import Localize
 
 class ThemeCell: UITableViewCell {
     private lazy var palette: UIStackView = {
@@ -25,6 +26,7 @@ class ThemeCell: UITableViewCell {
         it.numberOfLines = 1
         it.textAlignment = .left
         it.lineBreakMode = .byTruncatingTail
+        it.updateScaledFont(nil, .subheadline)
         it.sizeToFit()
         return it
     }()
@@ -53,7 +55,8 @@ class ThemeCell: UITableViewCell {
     }()
     
     public lazy var checkbox: SnapchatCheckbox = {
-        let it = SnapchatCheckbox(frame: CGRect(x: 0, y: 0, width: cellHeight, height: cellHeight))
+        let it = SnapchatCheckbox()
+        it.frame(forAlignmentRect: CGRect.init(x: 0, y: 0, width: 24, height: 24))
         return it
     }()
     
@@ -111,7 +114,7 @@ class ThemeCell: UITableViewCell {
     ///   - colors: palette colors
     ///   - selector: checkbox listener
     public func bind(_ theme: AppTheme,_ colors: [UIColor],_ selected: Bool) -> Void{
-        themeLabel.text = theme.rawValue
+        themeLabel.text = theme.rawValue.localized()
         notidyPaletteCellCountChanged(colors.count)
         assert(colors.count == palette.subviews.count,
                "Palette has \(palette.subviews.count) subviews while \(colors.count) colors")

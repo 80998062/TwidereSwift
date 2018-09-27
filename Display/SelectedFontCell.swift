@@ -14,7 +14,6 @@ class SelectedFontCell: UITableViewCell {
         super.init(style: UITableViewCell.CellStyle.value1, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: CGRect.zero)
         accessoryType = .disclosureIndicator
-        textLabel?.text = "FontName"
         detailTextLabel?.theme_textColor = "Text.colorSecondary"
     }
     
@@ -22,10 +21,8 @@ class SelectedFontCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public var fontName: String?{
-        didSet{
-            detailTextLabel?.text = fontName
-        }
+    public func bind(fontName aName: String?){
+        textLabel?.text = "FontName".localized()
+        detailTextLabel?.text = aName
     }
-
 }

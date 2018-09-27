@@ -13,6 +13,7 @@ import Swinject
 import PopMenu
 import RxSwift
 import ReSwiftRouter
+import CC
 
 /// global module
 let container: Container = Container(){ it in
@@ -54,20 +55,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         return true
     }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        SwiftyPlistManager.shared.start(plistNames: ["Preferences"], logging: true)
+    }
    
 }
 
 
 // MARK: - apply themes
 extension AppDelegate{
-    private func setupCustomFont(){
-        //        guard let customFont = SwiftyPlistManager.shared.fetchValue(for: "FontName", fromPlistWithName: "Info") else {
-        //            fatalError("Can't find key: FontName in Info.plist")
-        //        }
-    }
-    
+   
     private func setupPalette() -> Void {
-        ThemeManager.setTheme(plistName: "Classic", path: .mainBundle)
+        let savedFontName = currentFontName()
+        let savedThemeName = currentThemeName() ?? "Classic"
+        ThemeManager.setTheme(plistName: savedThemeName, path: .mainBundle)
+        
         // status bar
         UIApplication.shared.theme_setStatusBarStyle("UIStatusBarStyle", animated: true)
         // navigation bar
@@ -85,13 +88,13 @@ extension AppDelegate{
             let shadow = NSShadow(); shadow.shadowOffset = CGSize.zero
             let titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: color,
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline),
+                NSAttributedString.Key.font: ScaledFont.init(fontName: savedFontName).font(forTextStyle: .subheadline),
                 NSAttributedString.Key.shadow: shadow
             ]
             
             return titleTextAttributes
         }
-        //
+        
         let label = UILabel.appearance()
         label.theme_highlightedTextColor = "Text.colorLink"
         label.theme_textColor = "Text.colorPrimary"
@@ -108,16 +111,15 @@ extension AppDelegate{
         text.theme_tintColor = "Text.colorLink"
         text.backgroundColor =  UIColor.clear
         text.layer.masksToBounds = true
+       
         
         let field = UITextField.appearance()
         field.theme_textColor = "Text.colorPrimary"
         field.theme_tintColor = "Text.colorLink"
         field.backgroundColor = UIColor.clear
         field.layer.masksToBounds = true
-        
-//        let control = SnapchatCheckbox.appearance()
-//        control.theme_tintColor = "Theme.colorAccent"
-        
+     
+    
         let listView = UITableView.appearance()
         listView.theme_separatorColor = "List.colorSeperator"
         listView.theme_backgroundColor = "Theme.windowBackground"
@@ -127,6 +129,7 @@ extension AppDelegate{
         cell.theme_backgroundColor = "List.itemBackground"
         let button = UIButton.appearance()
         button.theme_tintColor = "Theme.colorAccent"
+      
         
         let toggle = UISwitch.appearance()
         toggle.theme_onTintColor = "Theme.colorAccent"

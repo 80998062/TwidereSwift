@@ -12,8 +12,10 @@ import ReSwift
 import ReSwiftRouter
 import CC
 
+
+
 fileprivate class FontNameCell: UITableViewCell{
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .default
@@ -27,34 +29,18 @@ fileprivate class FontNameCell: UITableViewCell{
     func bind(forFontName name: String, isSelected checked: Bool){
         textLabel?.text = name
         accessoryType = checked ? .checkmark : .none
-        textLabel?.updateScaledFont(forFontName: name, forFontStyle: .body)
     }
 }
 
 class FontNameViewController: UITableViewController {
     
-    public static let ARGS_COMPLETION = "completion"
-    public static let ARGS_FONT_NAME = "font_name"
-    
-    fileprivate var completion: ((_:String?) -> Void)? = nil
-    
     fileprivate var sourceFontName:String?
-    
-    convenience init(fontName: String?, completion: ((_:String?) -> Void)?){
-        self.init(nibName: nil, bundle: nil)
-        self.sourceFontName  = fontName
-        self.selectedFontName  = fontName
-        self.completion = completion
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
+    fileprivate var selectedFontName: String? = nil
+    fileprivate var selectedIndexPath: IndexPath? = nil
+    fileprivate let fontNames = ["System", "Noteworthy", "Pink"]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavgationBar()
-        
         clearsSelectionOnViewWillAppear = false
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets.zero
@@ -62,12 +48,12 @@ class FontNameViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         register(tableView, cell: FontNameCell.self)
         
+        selectedFontName = currentFontName()
+        sourceFontName = selectedFontName
+        if selectedFontName != nil, let index = fontNames.firstIndex(of: selectedFontName!){
+            selectedIndexPath = IndexPath.init(row: index, section: 0)
+        }
     }
-    
-    fileprivate let fontNames = ["System", "Noteworthy"]
-    
-    fileprivate var selectedFontName: String? = nil
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -77,7 +63,6 @@ class FontNameViewController: UITableViewController {
         return fontNames.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeue(tableView, cell: FontNameCell.self, indexPath: indexPath)
         let fontName = fontNames[indexPath.row]
@@ -86,12 +71,14 @@ class FontNameViewController: UITableViewController {
         return cell
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if fontNames[indexPath.row] != selectedFontName{
-            selectedFontName = fontNames[indexPath.row]
-            tableView.reloadData()
+        var willUpdate = [indexPath]
+        if selectedIndexPath != nil{
+            willUpdate.append(selectedIndexPath!)
         }
+        selectedIndexPath = indexPath
+        selectedFontName = fontNames[indexPath.row]
+        tableView.reloadRows(at: willUpdate, with: .automatic)
     }
 }
 
@@ -101,14 +88,27 @@ extension FontNameViewController{
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
         let done = UIBarButtonItem(barButtonSystemItem: .done,target: self, action: #selector(FontNameViewController.onDone))
-        navigationItem.leftBarButtonItem = done
-        navigationItem.title = "FontName"
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel,target: self, action: #selector(FontNameViewController.onCancel))
+        
+        navigationItem.leftBarButtonItem = cancel
+        navigationItem.rightBarButtonItem = done
+        navigationItem.title = "FontName".localized()
+    }
+    
+    @objc dynamic func onCancel(){
+        navigationController?.popViewController(animated: true)
     }
     
     @objc dynamic func onDone(){
-        if selectedFontName != sourceFontName{
-            completion?(selectedFontName)
-        }
+        // send notification:
+//        if selectedFontName != nil && selectedFontName != sourceFontName{
+//            SwiftyPlistManager.shared.save(selectedFontName!, forKey: "FontName", toPlistWithName: "Preferences"){ e in
+//                if e == nil{
+//                    NotificationCenter.default.post(name: NSNotification.Name(FontNameNotification), object: nil, userInfo: ["FontName": self.selectedFontName!])
+//                    navigationController?.popViewController(animated: true)
+//                }
+//            }
+//        }
         navigationController?.popViewController(animated: true)
     }
     

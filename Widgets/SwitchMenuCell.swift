@@ -16,7 +16,8 @@ public class SwitchMenuCell: UITableViewCell {
         return it
     }()
     
-    private let maxWidth = UIScreen.main.bounds.width * 0.75
+    private let maxWidth = UIScreen.main.bounds.width * 0.618
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView(frame: CGRect.zero)
@@ -25,12 +26,6 @@ public class SwitchMenuCell: UITableViewCell {
         textLabel?.lineBreakMode = .byTruncatingMiddle
         detailTextLabel?.numberOfLines = 1
         detailTextLabel?.lineBreakMode = .byTruncatingMiddle
-        textLabel?.snp.makeConstraints{(make) -> Void in
-            make.width.lessThanOrEqualTo(maxWidth)
-        }
-        detailTextLabel?.snp.makeConstraints{(make) -> Void in
-            make.width.lessThanOrEqualTo(maxWidth)
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,7 +39,6 @@ public class SwitchMenuCell: UITableViewCell {
         }else{
             detailTextLabel?.text  = nil
         }
-        
         toggle.isOn = isOn
     }
 }

@@ -5,23 +5,37 @@
 //  Created by 沈烨坷 on 2018/9/18.
 //  Copyright © 2018 Sinyuk. All rights reserved.
 //
-import UIKit
+
 import PopMenu
 import IconFont
+import Localize
 
-enum LanguageType: String,CaseIterable {
-    typealias Location = String
-    case zhHans = "zh-Hans", en , ja
-    static func actions(didSelect handler: PopMenuAction.PopMenuActionHandler?) -> [PopMenuAction]{
-        var actions = [PopMenuDefaultAction]()
-        let icon = UIImage.iconFont(imageSize: .icon_menu, icon: FontAwesome.github)
-        for type in (LanguageType.allCases) {
-            actions.append(PopMenuDefaultAction(title: type.localizable(), image: icon, color: nil, didSelect: handler))
-        }
-        return actions
+func languagePopMenuActions(handler: PopMenuAction.PopMenuActionHandler? , excludeBase: Bool = true) -> [PopMenuAction]{
+    var actions = [PopMenuDefaultAction]()
+    for type in (Localize.availableLanguages(true)) {
+        let title = Localize.displayNameForLanguage(type)
+        let action = PopMenuDefaultAction(title: title, image: nil, color: nil, didSelect: handler)
+        actions.append(action)
     }
-    
-    func localizable() -> String{
-        return NSLocalizedString(rawValue, comment: "Language name")
+    return actions
+}
+
+
+func languageDisplayNames() -> [String]{
+    return Localize.availableLanguages(true).map{ type in
+        return Localize.displayNameForLanguage(type)
     }
+}
+
+
+public func addLanguageObserver(observer: Any, selector: Selector){
+    NotificationCenter.default.addObserver(observer, selector: selector, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+}
+
+public func removeLanguageObserver(observer: Any){
+    NotificationCenter.default.removeObserver(observer, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+}
+
+protocol LanguageObserver {
+    func didLanguageChanged()
 }

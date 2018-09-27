@@ -19,6 +19,9 @@
 		7E11A30F2152224F00F2AFDC /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A30E2152224F00F2AFDC /* ThemeCell.swift */; };
 		7E11A3112152226A00F2AFDC /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A3102152226A00F2AFDC /* ThemeViewController.swift */; };
 		7E11A32D2152240500F2AFDC /* IconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E11A32C215222F100F2AFDC /* IconFont.framework */; };
+		7E1D95D52159F88F005B4B8F /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D95D42159F88F005B4B8F /* Preferences.plist */; };
+		7E1D95E2215B8E65005B4B8F /* Actions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D95E0215B8E65005B4B8F /* Actions.strings */; };
+		7E1D95E9215B8EEE005B4B8F /* Sources.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D95E7215B8EEE005B4B8F /* Sources.strings */; };
 		7E7773E02150FA220081BCB2 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7773DF2150FA220081BCB2 /* OthersViewController.swift */; };
 		7E7773E2215114040081BCB2 /* Language+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7773E1215114040081BCB2 /* Language+Ext.swift */; };
 		7E934DAA214B956300FBE203 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DA9214B956300FBE203 /* State.swift */; };
@@ -51,6 +54,7 @@
 		7ED2DBB1214A362200164B20 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2DBB0214A362200164B20 /* SettingsState.swift */; };
 		7EF2C9482154B8E6000E09B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF2C9462154B8E6000E09B4 /* LaunchScreen.storyboard */; };
 		7EF2C94B2154B8FB000E09B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EF2C9492154B8FB000E09B4 /* Localizable.strings */; };
+		7EF2C9982154C3B9000E09B4 /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF2C98E2154C349000E09B4 /* Localize.framework */; };
 		7EFCA6A721352F3800DE22AD /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCA6A621352F3800DE22AD /* AppReducer.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +94,13 @@
 			remoteGlobalIDString = 7EBCF42821256BDC002B96ED;
 			remoteInfo = twidere;
 		};
+		7EF2C98D2154C349000E09B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EF2C9892154C348000E09B4 /* Localize.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7EF2C97E2154C348000E09B4;
+			remoteInfo = Localize;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +117,13 @@
 		7E11A30E2152224F00F2AFDC /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		7E11A3102152226A00F2AFDC /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		7E11A327215222F100F2AFDC /* IconFont.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IconFont.xcodeproj; path = IconFont/IconFont.xcodeproj; sourceTree = "<group>"; };
+		7E1D95D42159F88F005B4B8F /* Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
+		7E1D95E1215B8E65005B4B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Actions.strings; sourceTree = "<group>"; };
+		7E1D95E3215B8E6F005B4B8F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Actions.strings; sourceTree = "<group>"; };
+		7E1D95E4215B8E78005B4B8F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Actions.strings"; sourceTree = "<group>"; };
+		7E1D95E8215B8EEE005B4B8F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Sources.strings"; sourceTree = "<group>"; };
+		7E1D95EA215B8EF7005B4B8F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Sources.strings; sourceTree = "<group>"; };
+		7E1D95EB215B8EFF005B4B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Sources.strings; sourceTree = "<group>"; };
 		7E7773DF2150FA220081BCB2 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
 		7E7773E1215114040081BCB2 /* Language+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+Ext.swift"; sourceTree = "<group>"; };
 		7E934DA9214B956300FBE203 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -146,6 +164,7 @@
 		7EF2C94D2154B925000E09B4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7EF2C94E2154BAB9000E09B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7EF2C94F2154BAB9000E09B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7EF2C9892154C348000E09B4 /* Localize.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Localize.xcodeproj; path = Localize/Localize.xcodeproj; sourceTree = "<group>"; };
 		7EFCA6A621352F3800DE22AD /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE6FD7B812B856AF3BEE80A7 /* Pods-twidere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twidere.release.xcconfig"; path = "Target Support Files/Pods-twidere/Pods-twidere.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF2C9982154C3B9000E09B4 /* Localize.framework in Frameworks */,
 				7E0D27B821548E3A00D67DE9 /* CC.framework in Frameworks */,
 				7E11A32D2152240500F2AFDC /* IconFont.framework in Frameworks */,
 				7E11A3082152201000F2AFDC /* SwiftTheme.framework in Frameworks */,
@@ -269,10 +289,11 @@
 		7EBCF42021256BDC002B96ED = {
 			isa = PBXGroup;
 			children = (
+				7EF2C9892154C348000E09B4 /* Localize.xcodeproj */,
 				7E0D278921548C2700D67DE9 /* CC.xcodeproj */,
 				7E11A327215222F100F2AFDC /* IconFont.xcodeproj */,
 				7E11A2FE2152194B00F2AFDC /* SwiftTheme.xcodeproj */,
-				7ECD428F212C606400C2CDFA /* Feed */,
+				7ECD428F212C606400C2CDFA /* Display */,
 				4B494516AD31F0992E46A556 /* Frameworks */,
 				3BCC6B20D3CF96CE710C6F7A /* Pods */,
 				7EBCF42A21256BDC002B96ED /* Products */,
@@ -299,6 +320,7 @@
 		7EBCF42B21256BDC002B96ED /* Twidere */ = {
 			isa = PBXGroup;
 			children = (
+				7E1D95E0215B8E65005B4B8F /* Actions.strings */,
 				7EF2C9492154B8FB000E09B4 /* Localizable.strings */,
 				7EF2C9462154B8E6000E09B4 /* LaunchScreen.storyboard */,
 				7ED0D23C2142296B008C9993 /* NewPopMenu+Ext.swift */,
@@ -309,6 +331,7 @@
 				7EBCF43321256BDE002B96ED /* Assets.xcassets */,
 				7EBCF43821256BDE002B96ED /* Info.plist */,
 				7ECD425E2127D9C400C2CDFA /* Dimension.swift */,
+				7E1D95D42159F88F005B4B8F /* Preferences.plist */,
 			);
 			path = Twidere;
 			sourceTree = "<group>";
@@ -326,7 +349,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		7ECD428F212C606400C2CDFA /* Feed */ = {
+		7ECD428F212C606400C2CDFA /* Display */ = {
 			isa = PBXGroup;
 			children = (
 				7ECD4285212BF1AF00C2CDFA /* DisplayViewController.swift */,
@@ -336,7 +359,7 @@
 				7EA94BFA2133C79400C6E8D9 /* FontNameViewController.swift */,
 				7ECD4290212C606B00C2CDFA /* widgets */,
 			);
-			path = Feed;
+			path = Display;
 			sourceTree = "<group>";
 		};
 		7ECD4290212C606B00C2CDFA /* widgets */ = {
@@ -353,6 +376,7 @@
 		7ECD429C212DCB3900C2CDFA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7E1D95E7215B8EEE005B4B8F /* Sources.strings */,
 				7ECD429D212DCB8600C2CDFA /* SourceCell.swift */,
 				7ECD42B0212FE04700C2CDFA /* SourceViewController.swift */,
 				7ECD42B2212FE2DF00C2CDFA /* EditSourceController.swift */,
@@ -360,6 +384,14 @@
 				7ED0D23A213FB3C0008C9993 /* Source.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		7EF2C98A2154C348000E09B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EF2C98E2154C349000E09B4 /* Localize.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7EFCA6A221352ECC00DE22AD /* Routes */ = {
@@ -485,6 +517,10 @@
 					ProjectRef = 7E11A327215222F100F2AFDC /* IconFont.xcodeproj */;
 				},
 				{
+					ProductGroup = 7EF2C98A2154C348000E09B4 /* Products */;
+					ProjectRef = 7EF2C9892154C348000E09B4 /* Localize.xcodeproj */;
+				},
+				{
 					ProductGroup = 7E11A2FF2152194B00F2AFDC /* Products */;
 					ProjectRef = 7E11A2FE2152194B00F2AFDC /* SwiftTheme.xcodeproj */;
 				},
@@ -520,6 +556,13 @@
 			remoteRef = 7E11A32B215222F100F2AFDC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7EF2C98E2154C349000E09B4 /* Localize.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Localize.framework;
+			remoteRef = 7EF2C98D2154C349000E09B4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -528,9 +571,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ECD427E212AB6A400C2CDFA /* Classic.plist in Resources */,
+				7E1D95D52159F88F005B4B8F /* Preferences.plist in Resources */,
 				7ECD42B921301E9000C2CDFA /* Noteworthy.plist in Resources */,
 				7EF2C94B2154B8FB000E09B4 /* Localizable.strings in Resources */,
+				7E1D95E2215B8E65005B4B8F /* Actions.strings in Resources */,
 				7EF2C9482154B8E6000E09B4 /* LaunchScreen.storyboard in Resources */,
+				7E1D95E9215B8EEE005B4B8F /* Sources.strings in Resources */,
 				7EBCF43421256BDE002B96ED /* Assets.xcassets in Resources */,
 				7ECD4280212ABCBE00C2CDFA /* PinkPower.plist in Resources */,
 			);
@@ -688,6 +734,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7E1D95E0215B8E65005B4B8F /* Actions.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E1D95E1215B8E65005B4B8F /* Base */,
+				7E1D95E3215B8E6F005B4B8F /* ja */,
+				7E1D95E4215B8E78005B4B8F /* zh-Hans */,
+			);
+			name = Actions.strings;
+			sourceTree = "<group>";
+		};
+		7E1D95E7215B8EEE005B4B8F /* Sources.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E1D95E8215B8EEE005B4B8F /* zh-Hans */,
+				7E1D95EA215B8EF7005B4B8F /* ja */,
+				7E1D95EB215B8EFF005B4B8F /* Base */,
+			);
+			name = Sources.strings;
+			sourceTree = "<group>";
+		};
 		7EF2C9462154B8E6000E09B4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

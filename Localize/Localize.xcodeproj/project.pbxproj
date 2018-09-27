@@ -7,31 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E11A321215222F100F2AFDC /* IconFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E11A31F215222F000F2AFDC /* IconFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E11A38121522BC000F2AFDC /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E11A36A21522BC000F2AFDC /* FontAwesome.ttf */; };
-		7E11A38321522BC000F2AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A36E21522BC000F2AFDC /* UIButton+Extensions.swift */; };
-		7E11A38421522BC000F2AFDC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A36F21522BC000F2AFDC /* UIImage+Extensions.swift */; };
-		7E11A38521522BC000F2AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37021522BC000F2AFDC /* UIBarButtonItem+Extensions.swift */; };
-		7E11A38621522BC000F2AFDC /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37121522BC000F2AFDC /* UILabel+Extensions.swift */; };
-		7E11A38721522BC000F2AFDC /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37321522BC000F2AFDC /* FontAwesome.swift */; };
-		7E11A38821522BC000F2AFDC /* IconFontProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A37521522BC000F2AFDC /* IconFontProtocols.swift */; };
+		7EF2C9832154C348000E09B4 /* Localize.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF2C9812154C348000E09B4 /* Localize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EF2C9942154C36F000E09B4 /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2C9902154C36F000E09B4 /* String+LocalizedBundleTableName.swift */; };
+		7EF2C9952154C36F000E09B4 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2C9912154C36F000E09B4 /* Localize.swift */; };
+		7EF2C9962154C36F000E09B4 /* String+LocalizeBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2C9922154C36F000E09B4 /* String+LocalizeBundle.swift */; };
+		7EF2C9972154C36F000E09B4 /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2C9932154C36F000E09B4 /* String+LocalizeTableName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E11A31C215222F000F2AFDC /* IconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E11A31F215222F000F2AFDC /* IconFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconFont.h; sourceTree = "<group>"; };
-		7E11A320215222F100F2AFDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E11A36A21522BC000F2AFDC /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		7E11A36E21522BC000F2AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		7E11A36F21522BC000F2AFDC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		7E11A37021522BC000F2AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
-		7E11A37121522BC000F2AFDC /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
-		7E11A37321522BC000F2AFDC /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
-		7E11A37521522BC000F2AFDC /* IconFontProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconFontProtocols.swift; sourceTree = "<group>"; };
+		7EF2C97E2154C348000E09B4 /* Localize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF2C9812154C348000E09B4 /* Localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localize.h; sourceTree = "<group>"; };
+		7EF2C9822154C348000E09B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EF2C9902154C36F000E09B4 /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizedBundleTableName.swift"; sourceTree = "<group>"; };
+		7EF2C9912154C36F000E09B4 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		7EF2C9922154C36F000E09B4 /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeBundle.swift"; sourceTree = "<group>"; };
+		7EF2C9932154C36F000E09B4 /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeTableName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7E11A319215222F000F2AFDC /* Frameworks */ = {
+		7EF2C97B2154C348000E09B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,171 +35,133 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E11A312215222F000F2AFDC = {
+		7EF2C9742154C348000E09B4 = {
 			isa = PBXGroup;
 			children = (
-				7E11A36921522BC000F2AFDC /* Resources */,
-				7E11A36C21522BC000F2AFDC /* Sources */,
-				7E11A31E215222F000F2AFDC /* IconFont */,
-				7E11A31D215222F000F2AFDC /* Products */,
+				7EF2C98F2154C35E000E09B4 /* Sources */,
+				7EF2C9802154C348000E09B4 /* Localize */,
+				7EF2C97F2154C348000E09B4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7E11A31D215222F000F2AFDC /* Products */ = {
+		7EF2C97F2154C348000E09B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7E11A31C215222F000F2AFDC /* IconFont.framework */,
+				7EF2C97E2154C348000E09B4 /* Localize.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7E11A31E215222F000F2AFDC /* IconFont */ = {
+		7EF2C9802154C348000E09B4 /* Localize */ = {
 			isa = PBXGroup;
 			children = (
-				7E11A31F215222F000F2AFDC /* IconFont.h */,
-				7E11A320215222F100F2AFDC /* Info.plist */,
+				7EF2C9812154C348000E09B4 /* Localize.h */,
+				7EF2C9822154C348000E09B4 /* Info.plist */,
 			);
-			path = IconFont;
+			path = Localize;
 			sourceTree = "<group>";
 		};
-		7E11A36921522BC000F2AFDC /* Resources */ = {
+		7EF2C98F2154C35E000E09B4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				7E11A36A21522BC000F2AFDC /* FontAwesome.ttf */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		7E11A36C21522BC000F2AFDC /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				7E11A36D21522BC000F2AFDC /* Extensions */,
-				7E11A37221522BC000F2AFDC /* IconFonts */,
-				7E11A37421522BC000F2AFDC /* Protocols */,
+				7EF2C9912154C36F000E09B4 /* Localize.swift */,
+				7EF2C9922154C36F000E09B4 /* String+LocalizeBundle.swift */,
+				7EF2C9902154C36F000E09B4 /* String+LocalizedBundleTableName.swift */,
+				7EF2C9932154C36F000E09B4 /* String+LocalizeTableName.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		7E11A36D21522BC000F2AFDC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7E11A36E21522BC000F2AFDC /* UIButton+Extensions.swift */,
-				7E11A36F21522BC000F2AFDC /* UIImage+Extensions.swift */,
-				7E11A37021522BC000F2AFDC /* UIBarButtonItem+Extensions.swift */,
-				7E11A37121522BC000F2AFDC /* UILabel+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		7E11A37221522BC000F2AFDC /* IconFonts */ = {
-			isa = PBXGroup;
-			children = (
-				7E11A37321522BC000F2AFDC /* FontAwesome.swift */,
-			);
-			path = IconFonts;
-			sourceTree = "<group>";
-		};
-		7E11A37421522BC000F2AFDC /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7E11A37521522BC000F2AFDC /* IconFontProtocols.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7E11A317215222F000F2AFDC /* Headers */ = {
+		7EF2C9792154C348000E09B4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E11A321215222F100F2AFDC /* IconFont.h in Headers */,
+				7EF2C9832154C348000E09B4 /* Localize.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7E11A31B215222F000F2AFDC /* IconFont */ = {
+		7EF2C97D2154C348000E09B4 /* Localize */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E11A324215222F100F2AFDC /* Build configuration list for PBXNativeTarget "IconFont" */;
+			buildConfigurationList = 7EF2C9862154C348000E09B4 /* Build configuration list for PBXNativeTarget "Localize" */;
 			buildPhases = (
-				7E11A317215222F000F2AFDC /* Headers */,
-				7E11A318215222F000F2AFDC /* Sources */,
-				7E11A319215222F000F2AFDC /* Frameworks */,
-				7E11A31A215222F000F2AFDC /* Resources */,
+				7EF2C9792154C348000E09B4 /* Headers */,
+				7EF2C97A2154C348000E09B4 /* Sources */,
+				7EF2C97B2154C348000E09B4 /* Frameworks */,
+				7EF2C97C2154C348000E09B4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = IconFont;
-			productName = IconFont;
-			productReference = 7E11A31C215222F000F2AFDC /* IconFont.framework */;
+			name = Localize;
+			productName = Localize;
+			productReference = 7EF2C97E2154C348000E09B4 /* Localize.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7E11A313215222F000F2AFDC /* Project object */ = {
+		7EF2C9752154C348000E09B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Sinyuk;
 				TargetAttributes = {
-					7E11A31B215222F000F2AFDC = {
+					7EF2C97D2154C348000E09B4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
-			buildConfigurationList = 7E11A316215222F000F2AFDC /* Build configuration list for PBXProject "IconFont" */;
+			buildConfigurationList = 7EF2C9782154C348000E09B4 /* Build configuration list for PBXProject "Localize" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 7E11A312215222F000F2AFDC;
-			productRefGroup = 7E11A31D215222F000F2AFDC /* Products */;
+			mainGroup = 7EF2C9742154C348000E09B4;
+			productRefGroup = 7EF2C97F2154C348000E09B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7E11A31B215222F000F2AFDC /* IconFont */,
+				7EF2C97D2154C348000E09B4 /* Localize */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7E11A31A215222F000F2AFDC /* Resources */ = {
+		7EF2C97C2154C348000E09B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E11A38121522BC000F2AFDC /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7E11A318215222F000F2AFDC /* Sources */ = {
+		7EF2C97A2154C348000E09B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E11A38521522BC000F2AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
-				7E11A38321522BC000F2AFDC /* UIButton+Extensions.swift in Sources */,
-				7E11A38821522BC000F2AFDC /* IconFontProtocols.swift in Sources */,
-				7E11A38621522BC000F2AFDC /* UILabel+Extensions.swift in Sources */,
-				7E11A38721522BC000F2AFDC /* FontAwesome.swift in Sources */,
-				7E11A38421522BC000F2AFDC /* UIImage+Extensions.swift in Sources */,
+				7EF2C9962154C36F000E09B4 /* String+LocalizeBundle.swift in Sources */,
+				7EF2C9952154C36F000E09B4 /* Localize.swift in Sources */,
+				7EF2C9942154C36F000E09B4 /* String+LocalizedBundleTableName.swift in Sources */,
+				7EF2C9972154C36F000E09B4 /* String+LocalizeTableName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7E11A322215222F100F2AFDC /* Debug */ = {
+		7EF2C9842154C348000E09B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		7E11A323215222F100F2AFDC /* Release */ = {
+		7EF2C9852154C348000E09B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -327,9 +283,10 @@
 			};
 			name = Release;
 		};
-		7E11A325215222F100F2AFDC /* Debug */ = {
+		7EF2C9872154C348000E09B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -337,24 +294,26 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IconFont/Info.plist;
+				INFOPLIST_FILE = Localize/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.IconFont;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.Localize;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7E11A326215222F100F2AFDC /* Release */ = {
+		7EF2C9882154C348000E09B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -362,14 +321,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IconFont/Info.plist;
+				INFOPLIST_FILE = Localize/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.IconFont;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.Localize;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -380,25 +339,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7E11A316215222F000F2AFDC /* Build configuration list for PBXProject "IconFont" */ = {
+		7EF2C9782154C348000E09B4 /* Build configuration list for PBXProject "Localize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E11A322215222F100F2AFDC /* Debug */,
-				7E11A323215222F100F2AFDC /* Release */,
+				7EF2C9842154C348000E09B4 /* Debug */,
+				7EF2C9852154C348000E09B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7E11A324215222F100F2AFDC /* Build configuration list for PBXNativeTarget "IconFont" */ = {
+		7EF2C9862154C348000E09B4 /* Build configuration list for PBXNativeTarget "Localize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E11A325215222F100F2AFDC /* Debug */,
-				7E11A326215222F100F2AFDC /* Release */,
+				7EF2C9872154C348000E09B4 /* Debug */,
+				7EF2C9882154C348000E09B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7E11A313215222F000F2AFDC /* Project object */;
+	rootObject = 7EF2C9752154C348000E09B4 /* Project object */;
 }
