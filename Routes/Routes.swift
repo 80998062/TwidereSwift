@@ -67,6 +67,11 @@ extension SettingsNavViewController: Routable{
             self.viewControllers = [it]
             completionHandler()
             return it
+        case SignInViewController.route():
+            let it = SignInViewController()
+            self.viewControllers = [it]
+            completionHandler()
+            return it
         default:
             RouteNotFound(identifierFor: routeElementIdentifier)
         }
@@ -105,3 +110,5 @@ extension SettingsTabViewController: Routable{
 extension FontNameViewController: Routable{}
 
 extension EditSourceController: Routable{}
+
+extension SignInViewController: Routable{}

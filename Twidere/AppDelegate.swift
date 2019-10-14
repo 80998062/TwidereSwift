@@ -14,6 +14,7 @@ import PopMenu
 import RxSwift
 import ReSwiftRouter
 import CC
+import Authorize
 
 /// global module
 let container: Container = Container(){ it in
@@ -60,6 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftyPlistManager.shared.start(plistNames: ["Preferences"], logging: true)
     }
    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        switch url.host {
+        case "oauth-callback":
+            OAuthSwift.handle(url: url)
+        default:
+            break
+        }
+        return true
+    }
 }
 
 

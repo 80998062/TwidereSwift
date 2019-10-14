@@ -43,36 +43,25 @@ extension EditSourceController: LanguageObserver {
     }
 }
 
-extension EditSourceController: StoreSubscriber{
-    typealias StoreSubscriberStateType = Others
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        mainStore.subscribe(self){ state in
-            state.select{ $0.settingsState.others }
-        }
-    }
-    
-    func newState(state: Others) {
-        
-    }
-}
+//extension EditSourceController: StoreSubscriber{
+//    typealias StoreSubscriberStateType = Others
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        mainStore.subscribe(self){ state in
+//            state.select{ $0.settingsState.others }
+//        }
+//    }
+//
+//    func newState(state: Others) {
+//
+//    }
+//}
 
 class EditSourceController: UITableViewController{
     
     fileprivate var sourceCopy: Source? = nil
-    
-    convenience init(uniqueId: String?){
-        self.init(nibName: nil, bundle: nil)
-        if nil != uniqueId{
-            
-        }else{
-            // 加载默认配置
-            sourceCopy = Source._default
-            tableView.reloadData()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +81,9 @@ class EditSourceController: UITableViewController{
         return sectionTitles.count
     }
     
-    private let sectionTitles = ["API URL",nil,"Account Type","Auth Type",nil,"Consumer Identity",nil]
+  
+    
+    private let sectionTitles = ["API URL",nil,"Account Type","Auth Type"]
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let title = sectionTitles[section]
@@ -160,15 +151,6 @@ class EditSourceController: UITableViewController{
             let cell = dequeue(tableView, cell: SwitchMenuCell.self, indexPath: indexPath)
             cell.bind(title: "Use same URL for OAuth signing", subTitle: nil, isOn: false)
             return cell
-        case 5:
-            let cell = dequeue(tableView, cell: TextFieldCell.self, indexPath: indexPath)
-            cell.textField.placeholder = "Consumer Key"
-            return cell
-        case 6:
-            let cell = dequeue(tableView, cell: TextFieldCell.self, indexPath: indexPath)
-            cell.textField.placeholder = "Consumer Secret"
-            return cell
-            
         default:
             fatalError()
         }
@@ -220,7 +202,7 @@ class EditSourceController: UITableViewController{
     
     
     override func viewWillDisappear(_ animated: Bool) {
-        mainStore.unsubscribe(self)
+//        mainStore.unsubscribe(self)
         
         // Required to update the route, when this VC was dismissed through back button from
         // NavigationController, since we can't intercept the back button

@@ -1,5 +1,7 @@
 platform :ios, '12.0'
 
+workspace 'Twidere'
+project 'Twidere.xcodeproj'
 target 'twidere' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -13,11 +15,12 @@ target 'twidere' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift', '~> 3.10.0'
-  
+  pod 'Alamofire', '~> 4.7'
+
 #  target 'twidereTests' do
 #    inherit! :search_paths
 #    # Pods for testing
 #  end
 
-
 end
+

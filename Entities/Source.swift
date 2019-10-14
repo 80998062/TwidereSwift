@@ -9,6 +9,7 @@
 import UIKit
 import PopMenu
 import IconFont
+import RealmSwift
 
 enum AccountType: String, CaseIterable {
     case Twitter, Weibo , Fanfou
@@ -40,36 +41,35 @@ enum URLMasks: String{
     case FanfouURL = "https://api.fanfou.com/"
 }
 
-struct Source{
-    public static let _default = Source(uniqueId: Date().description,
-                                        url: URLMasks.TwitterURL.rawValue,
-                                        urlForSigning: false,
-                                        versionSuffix: false,
-                                        accountType: AccountType.Twitter,
-                                        authTypes: AuthType.Basic,
-                                        consumer: nil)
-    
-    var uniqueId:String
-    var url: String
-    var urlForSigning: Bool?
-    var versionSuffix: Bool?
-    var accountType: AccountType
-    var authTypes: AuthType
-    var consumer: Consumer?
-    
-    struct Consumer {
-        var consumerKey: String
-        var consumerSecret: String
+class Source: Object{
+    @objc dynamic var createdAt:Date = Date()
+    @objc dynamic var endPoint: String = "/"
+    let urlForSigning = RealmOptional<Bool>()
+    let versionSuffix = RealmOptional<Bool>()
+    @objc dynamic var accountType: String = AccountType.Twitter.rawValue
+    @objc dynamic var authTypes: String = AuthType.OAuth2.rawValue    
+    override static func primaryKey() -> String? {
+        return "createdAt"
     }
+}
+
+
+
+/// From a async Realm
+class App: Object {
+    @objc dynamic var name: String = ""
+    @objc dynamic var state: String?
+    @objc dynamic var scope: String?
+    @objc dynamic var desc: String?
+    @objc dynamic var homepage: String?
+    @objc dynamic var consumerKey: String = ""
+    @objc dynamic var consumerSecret: String = ""
+    @objc dynamic var requestTokenUrl: String = ""
+    @objc dynamic var accessTokenUrl: String = ""
+    @objc dynamic var authorizeUrl: String = ""
+    @objc dynamic var callbackUrl: String = ""
     
-    
-    //    init(url: URL, accountType: AccountType ,sameUrlForSigning: Bool? = false,noVersionSuffix: Bool? = false, consumerKey: String? = nil ,consumerSecret: String? = nil) {
-    //        self.url = url
-    //        self.accountType = accountType
-    //        self.authType = authType
-    //        self.sameUrlForSigning = sameUrlForSigning
-    //        self.noVersionSuffix = noVersionSuffix
-    //        self.consumerKey = consumerKey
-    //        self.consumerSecret = consumerSecret
-    //    }
+    override static func primaryKey() -> String? {
+        return "name"
+    }
 }

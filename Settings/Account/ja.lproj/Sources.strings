@@ -16,6 +16,6 @@
 "Consumer Identity" = "身份验证";
 "URL Format" = "URL格式";
 "Version Suffix" = "添加API版本";
-"Use same URL for OAuth signing" = "使用相同URL签名"
-"Consumer Key" = "Consumer Key"
-"Consumer Secret" = "Consumer Secret"
+"Use same URL for OAuth signing" = "使用相同URL签名";
+"Consumer Key" = "Consumer Key";
+"Consumer Secret" = "Consumer Secret";

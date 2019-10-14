@@ -18,7 +18,7 @@ class TextFieldCell: UITableViewCell{
     }
     
     public lazy var textField: KaedeTextField = {
-        let it = KaedeTextField()
+        let it = KaedeTextField(frame: .zero)
         it.placeholderColor = ThemeManager.color(for: "Text.colorSecondary")
         it.foregroundColor = ThemeManager.color(for: "List.itemBackground")
         it.backgroundColor = ThemeManager.color(for: "List.colorSeperator")

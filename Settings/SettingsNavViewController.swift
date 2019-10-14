@@ -17,6 +17,6 @@ class SettingsNavViewController: UINavigationController{
         
         mainStore.dispatch(ReSwiftRouter.SetRouteAction([
             SettingsNavViewController.route(),
-            SettingsTabViewController.route()]))
+            SignInViewController.route()]))
     }
 }

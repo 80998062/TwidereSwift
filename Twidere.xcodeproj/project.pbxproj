@@ -22,8 +22,14 @@
 		7E1D95D52159F88F005B4B8F /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D95D42159F88F005B4B8F /* Preferences.plist */; };
 		7E1D95E2215B8E65005B4B8F /* Actions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D95E0215B8E65005B4B8F /* Actions.strings */; };
 		7E1D95E9215B8EEE005B4B8F /* Sources.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D95E7215B8EEE005B4B8F /* Sources.strings */; };
+		7E1D95F8215CA9E5005B4B8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D95F7215CA9E5005B4B8F /* Constants.swift */; };
 		7E7773E02150FA220081BCB2 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7773DF2150FA220081BCB2 /* OthersViewController.swift */; };
 		7E7773E2215114040081BCB2 /* Language+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7773E1215114040081BCB2 /* Language+Ext.swift */; };
+		7E871B24216C53F700C30876 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871B23216C53F700C30876 /* Configuration.swift */; };
+		7E871B2C216C7BFA00C30876 /* AppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871B2B216C7BFA00C30876 /* AppsTableViewController.swift */; };
+		7E921E3F215E2F880066DA37 /* Authorize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC7895215E18CC00B30B91 /* Authorize.framework */; };
+		7E921E46215E2FE40066DA37 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E921E45215E2FE40066DA37 /* SignInViewController.swift */; };
+		7E921E56215F4B670066DA37 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E921E55215F4B670066DA37 /* Account.swift */; };
 		7E934DAA214B956300FBE203 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DA9214B956300FBE203 /* State.swift */; };
 		7E934DAC214BA4BA00FBE203 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */; };
 		7E934DAE214BA5E700FBE203 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E934DAD214BA5E700FBE203 /* Routes.swift */; };
@@ -52,6 +58,7 @@
 		7ED0D23B213FB3C0008C9993 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D23A213FB3C0008C9993 /* Source.swift */; };
 		7ED0D23D2142296B008C9993 /* NewPopMenu+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED0D23C2142296B008C9993 /* NewPopMenu+Ext.swift */; };
 		7ED2DBB1214A362200164B20 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED2DBB0214A362200164B20 /* SettingsState.swift */; };
+		7EEC7864215E185700B30B91 /* twidereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC7863215E185700B30B91 /* twidereTests.swift */; };
 		7EF2C9482154B8E6000E09B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF2C9462154B8E6000E09B4 /* LaunchScreen.storyboard */; };
 		7EF2C94B2154B8FB000E09B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EF2C9492154B8FB000E09B4 /* Localizable.strings */; };
 		7EF2C9982154C3B9000E09B4 /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF2C98E2154C349000E09B4 /* Localize.framework */; };
@@ -80,19 +87,26 @@
 			remoteGlobalIDString = 7E11A31C215222F000F2AFDC;
 			remoteInfo = IconFont;
 		};
-		7EBCF43E21256BDE002B96ED /* PBXContainerItemProxy */ = {
+		7EEC7866215E185700B30B91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EBCF42121256BDC002B96ED /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7EBCF42821256BDC002B96ED;
 			remoteInfo = twidere;
 		};
-		7EBCF44921256BDE002B96ED /* PBXContainerItemProxy */ = {
+		7EEC7894215E18CC00B30B91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7EBCF42121256BDC002B96ED /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7EBCF42821256BDC002B96ED;
-			remoteInfo = twidere;
+			containerPortal = 7EEC788F215E18B100B30B91 /* Authorize.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7EEC7875215E18B100B30B91;
+			remoteInfo = Authorize;
+		};
+		7EEC7896215E18CC00B30B91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EEC788F215E18B100B30B91 /* Authorize.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7EEC787E215E18B100B30B91;
+			remoteInfo = AuthorizeTests;
 		};
 		7EF2C98D2154C349000E09B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -124,8 +138,13 @@
 		7E1D95E8215B8EEE005B4B8F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Sources.strings"; sourceTree = "<group>"; };
 		7E1D95EA215B8EF7005B4B8F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Sources.strings; sourceTree = "<group>"; };
 		7E1D95EB215B8EFF005B4B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Sources.strings; sourceTree = "<group>"; };
+		7E1D95F7215CA9E5005B4B8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7E7773DF2150FA220081BCB2 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
 		7E7773E1215114040081BCB2 /* Language+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+Ext.swift"; sourceTree = "<group>"; };
+		7E871B23216C53F700C30876 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		7E871B2B216C7BFA00C30876 /* AppsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableViewController.swift; sourceTree = "<group>"; };
+		7E921E45215E2FE40066DA37 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7E921E55215F4B670066DA37 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		7E934DA9214B956300FBE203 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		7E934DAB214BA4BA00FBE203 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		7E934DAD214BA5E700FBE203 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
@@ -134,8 +153,6 @@
 		7EBCF42C21256BDC002B96ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EBCF43321256BDE002B96ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EBCF43821256BDE002B96ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EBCF43D21256BDE002B96ED /* twidereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twidereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EBCF44821256BDE002B96ED /* twidereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twidereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBCF45B212571B3002B96ED /* SettingsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewController.swift; sourceTree = "<group>"; };
 		7ECD42592127D8F600C2CDFA /* TabItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemsProvider.swift; sourceTree = "<group>"; };
 		7ECD425E2127D9C400C2CDFA /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
@@ -158,6 +175,10 @@
 		7ED0D23A213FB3C0008C9993 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		7ED0D23C2142296B008C9993 /* NewPopMenu+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewPopMenu+Ext.swift"; sourceTree = "<group>"; };
 		7ED2DBB0214A362200164B20 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
+		7EEC7861215E185700B30B91 /* twidereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twidereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EEC7863215E185700B30B91 /* twidereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twidereTests.swift; sourceTree = "<group>"; };
+		7EEC7865215E185700B30B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EEC788F215E18B100B30B91 /* Authorize.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Authorize.xcodeproj; path = Authorize/Authorize.xcodeproj; sourceTree = "<group>"; };
 		7EF2C9472154B8E6000E09B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EF2C94A2154B8FB000E09B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7EF2C94C2154B925000E09B4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -174,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E921E3F215E2F880066DA37 /* Authorize.framework in Frameworks */,
 				7EF2C9982154C3B9000E09B4 /* Localize.framework in Frameworks */,
 				7E0D27B821548E3A00D67DE9 /* CC.framework in Frameworks */,
 				7E11A32D2152240500F2AFDC /* IconFont.framework in Frameworks */,
@@ -182,14 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EBCF43A21256BDE002B96ED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7EBCF44521256BDE002B96ED /* Frameworks */ = {
+		7EEC785E215E185700B30B91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,6 +283,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E1D95F6215CA99D005B4B8F /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D95F7215CA9E5005B4B8F /* Constants.swift */,
+				7E871B23216C53F700C30876 /* Configuration.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		7E7773DE2150E1110081BCB2 /* Ohters */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +299,23 @@
 				7E7773E1215114040081BCB2 /* Language+Ext.swift */,
 			);
 			path = Ohters;
+			sourceTree = "<group>";
+		};
+		7E921E44215E2FB50066DA37 /* Accout */ = {
+			isa = PBXGroup;
+			children = (
+				7E921E45215E2FE40066DA37 /* SignInViewController.swift */,
+			);
+			path = Accout;
+			sourceTree = "<group>";
+		};
+		7E921E54215F4B550066DA37 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7E921E55215F4B670066DA37 /* Account.swift */,
+				7ED0D23A213FB3C0008C9993 /* Source.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		7E934DA8214B955400FBE203 /* State */ = {
@@ -289,18 +330,21 @@
 		7EBCF42021256BDC002B96ED = {
 			isa = PBXGroup;
 			children = (
+				7E921E54215F4B550066DA37 /* Entities */,
+				7E921E44215E2FB50066DA37 /* Accout */,
+				7EEC788F215E18B100B30B91 /* Authorize.xcodeproj */,
 				7EF2C9892154C348000E09B4 /* Localize.xcodeproj */,
 				7E0D278921548C2700D67DE9 /* CC.xcodeproj */,
 				7E11A327215222F100F2AFDC /* IconFont.xcodeproj */,
 				7E11A2FE2152194B00F2AFDC /* SwiftTheme.xcodeproj */,
 				7ECD428F212C606400C2CDFA /* Display */,
+				7EEC7862215E185700B30B91 /* twidereTests */,
 				4B494516AD31F0992E46A556 /* Frameworks */,
 				3BCC6B20D3CF96CE710C6F7A /* Pods */,
 				7EBCF42A21256BDC002B96ED /* Products */,
 				7EFCA6A521352F2A00DE22AD /* Reducers */,
 				7EFCA6A221352ECC00DE22AD /* Routes */,
 				7EBCF45A2125714F002B96ED /* Settings */,
-				7ECD429C212DCB3900C2CDFA /* Source */,
 				7E934DA8214B955400FBE203 /* State */,
 				7EBCF42B21256BDC002B96ED /* Twidere */,
 				7E0D27C0215490E300D67DE9 /* Widgets */,
@@ -311,8 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				7EBCF42921256BDC002B96ED /* twidere.app */,
-				7EBCF43D21256BDE002B96ED /* twidereTests.xctest */,
-				7EBCF44821256BDE002B96ED /* twidereUITests.xctest */,
+				7EEC7861215E185700B30B91 /* twidereTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +363,7 @@
 		7EBCF42B21256BDC002B96ED /* Twidere */ = {
 			isa = PBXGroup;
 			children = (
+				7E1D95F6215CA99D005B4B8F /* Realm */,
 				7E1D95E0215B8E65005B4B8F /* Actions.strings */,
 				7EF2C9492154B8FB000E09B4 /* Localizable.strings */,
 				7EF2C9462154B8E6000E09B4 /* LaunchScreen.storyboard */,
@@ -339,6 +383,7 @@
 		7EBCF45A2125714F002B96ED /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7ECD429C212DCB3900C2CDFA /* Account */,
 				7E0D27B9215490D200D67DE9 /* Font */,
 				7E11A30B215221FF00F2AFDC /* Theming */,
 				7E7773DE2150E1110081BCB2 /* Ohters */,
@@ -373,7 +418,7 @@
 			path = widgets;
 			sourceTree = "<group>";
 		};
-		7ECD429C212DCB3900C2CDFA /* Source */ = {
+		7ECD429C212DCB3900C2CDFA /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				7E1D95E7215B8EEE005B4B8F /* Sources.strings */,
@@ -381,9 +426,27 @@
 				7ECD42B0212FE04700C2CDFA /* SourceViewController.swift */,
 				7ECD42B2212FE2DF00C2CDFA /* EditSourceController.swift */,
 				7ECD42B62130179900C2CDFA /* SourceEdit+Ext.swift */,
-				7ED0D23A213FB3C0008C9993 /* Source.swift */,
+				7E871B2B216C7BFA00C30876 /* AppsTableViewController.swift */,
 			);
-			path = Source;
+			path = Account;
+			sourceTree = "<group>";
+		};
+		7EEC7862215E185700B30B91 /* twidereTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC7863215E185700B30B91 /* twidereTests.swift */,
+				7EEC7865215E185700B30B91 /* Info.plist */,
+			);
+			path = twidereTests;
+			sourceTree = "<group>";
+		};
+		7EEC7890215E18B100B30B91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC7895215E18CC00B30B91 /* Authorize.framework */,
+				7EEC7897215E18CC00B30B91 /* AuthorizeTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7EF2C98A2154C348000E09B4 /* Products */ = {
@@ -434,41 +497,23 @@
 			productReference = 7EBCF42921256BDC002B96ED /* twidere.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7EBCF43C21256BDE002B96ED /* twidereTests */ = {
+		7EEC7860215E185700B30B91 /* twidereTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7EBCF45421256BDE002B96ED /* Build configuration list for PBXNativeTarget "twidereTests" */;
+			buildConfigurationList = 7EEC7868215E185700B30B91 /* Build configuration list for PBXNativeTarget "twidereTests" */;
 			buildPhases = (
-				7EBCF43921256BDE002B96ED /* Sources */,
-				7EBCF43A21256BDE002B96ED /* Frameworks */,
-				7EBCF43B21256BDE002B96ED /* Resources */,
+				7EEC785D215E185700B30B91 /* Sources */,
+				7EEC785E215E185700B30B91 /* Frameworks */,
+				7EEC785F215E185700B30B91 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7EBCF43F21256BDE002B96ED /* PBXTargetDependency */,
+				7EEC7867215E185700B30B91 /* PBXTargetDependency */,
 			);
 			name = twidereTests;
 			productName = twidereTests;
-			productReference = 7EBCF43D21256BDE002B96ED /* twidereTests.xctest */;
+			productReference = 7EEC7861215E185700B30B91 /* twidereTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		7EBCF44721256BDE002B96ED /* twidereUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7EBCF45721256BDE002B96ED /* Build configuration list for PBXNativeTarget "twidereUITests" */;
-			buildPhases = (
-				7EBCF44421256BDE002B96ED /* Sources */,
-				7EBCF44521256BDE002B96ED /* Frameworks */,
-				7EBCF44621256BDE002B96ED /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7EBCF44A21256BDE002B96ED /* PBXTargetDependency */,
-			);
-			name = twidereUITests;
-			productName = twidereUITests;
-			productReference = 7EBCF44821256BDE002B96ED /* twidereUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -477,19 +522,15 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Sinyuk;
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Sinyuk;
 				TargetAttributes = {
 					7EBCF42821256BDC002B96ED = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					7EBCF43C21256BDE002B96ED = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 7EBCF42821256BDC002B96ED;
-					};
-					7EBCF44721256BDE002B96ED = {
-						CreatedOnToolsVersion = 9.4.1;
+					7EEC7860215E185700B30B91 = {
+						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 7EBCF42821256BDC002B96ED;
 					};
 				};
@@ -508,6 +549,10 @@
 			productRefGroup = 7EBCF42A21256BDC002B96ED /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 7EEC7890215E18B100B30B91 /* Products */;
+					ProjectRef = 7EEC788F215E18B100B30B91 /* Authorize.xcodeproj */;
+				},
 				{
 					ProductGroup = 7E0D278A21548C2700D67DE9 /* Products */;
 					ProjectRef = 7E0D278921548C2700D67DE9 /* CC.xcodeproj */;
@@ -528,8 +573,7 @@
 			projectRoot = "";
 			targets = (
 				7EBCF42821256BDC002B96ED /* twidere */,
-				7EBCF43C21256BDE002B96ED /* twidereTests */,
-				7EBCF44721256BDE002B96ED /* twidereUITests */,
+				7EEC7860215E185700B30B91 /* twidereTests */,
 			);
 		};
 /* End PBXProject section */
@@ -554,6 +598,20 @@
 			fileType = wrapper.framework;
 			path = IconFont.framework;
 			remoteRef = 7E11A32B215222F100F2AFDC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EEC7895215E18CC00B30B91 /* Authorize.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Authorize.framework;
+			remoteRef = 7EEC7894215E18CC00B30B91 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EEC7897215E18CC00B30B91 /* AuthorizeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AuthorizeTests.xctest;
+			remoteRef = 7EEC7896215E18CC00B30B91 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7EF2C98E2154C349000E09B4 /* Localize.framework */ = {
@@ -582,14 +640,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EBCF43B21256BDE002B96ED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7EBCF44621256BDE002B96ED /* Resources */ = {
+		7EEC785F215E185700B30B91 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -630,6 +681,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-twidere/Pods-twidere-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwiftRouter/ReSwiftRouter.framework",
@@ -644,6 +696,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwiftRouter.framework",
@@ -677,12 +730,14 @@
 				7EFCA6A721352F3800DE22AD /* AppReducer.swift in Sources */,
 				7E11A2B8215203AA00F2AFDC /* SettingsReducer.swift in Sources */,
 				7EA94BFB2133C79400C6E8D9 /* FontNameViewController.swift in Sources */,
+				7E871B2C216C7BFA00C30876 /* AppsTableViewController.swift in Sources */,
 				7ECD42B72130179900C2CDFA /* SourceEdit+Ext.swift in Sources */,
 				7ECD4292212C609400C2CDFA /* AvatarImageView.swift in Sources */,
 				7E934DAC214BA4BA00FBE203 /* UINavigationController+Ext.swift in Sources */,
 				7E934DAA214B956300FBE203 /* State.swift in Sources */,
 				7E0D27BD215490D200D67DE9 /* ScaledFont.swift in Sources */,
 				7E7773E2215114040081BCB2 /* Language+Ext.swift in Sources */,
+				7E921E56215F4B670066DA37 /* Account.swift in Sources */,
 				7E0D27C2215490E400D67DE9 /* SwitchMenuCell.swift in Sources */,
 				7E11A30D2152222500F2AFDC /* AppTheme.swift in Sources */,
 				7ECD42B1212FE04700C2CDFA /* SourceViewController.swift in Sources */,
@@ -695,41 +750,33 @@
 				7ECD42B3212FE2DF00C2CDFA /* EditSourceController.swift in Sources */,
 				7ECD4294212C60F000C2CDFA /* IdLabel.swift in Sources */,
 				7E0D27BE215490D200D67DE9 /* Font+Ext.swift in Sources */,
+				7E921E46215E2FE40066DA37 /* SignInViewController.swift in Sources */,
 				7ECD429E212DCB8600C2CDFA /* SourceCell.swift in Sources */,
 				7ECD4296212C611700C2CDFA /* ContentTextView.swift in Sources */,
+				7E871B24216C53F700C30876 /* Configuration.swift in Sources */,
 				7ED0D23D2142296B008C9993 /* NewPopMenu+Ext.swift in Sources */,
 				7ED2DBB1214A362200164B20 /* SettingsState.swift in Sources */,
 				7ED0D239213FA70F008C9993 /* SelectedFontCell.swift in Sources */,
 				7EBCF45C212571B3002B96ED /* SettingsTabViewController.swift in Sources */,
+				7E1D95F8215CA9E5005B4B8F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EBCF43921256BDE002B96ED /* Sources */ = {
+		7EEC785D215E185700B30B91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7EBCF44421256BDE002B96ED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				7EEC7864215E185700B30B91 /* twidereTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7EBCF43F21256BDE002B96ED /* PBXTargetDependency */ = {
+		7EEC7867215E185700B30B91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7EBCF42821256BDC002B96ED /* twidere */;
-			targetProxy = 7EBCF43E21256BDE002B96ED /* PBXContainerItemProxy */;
-		};
-		7EBCF44A21256BDE002B96ED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7EBCF42821256BDC002B96ED /* twidere */;
-			targetProxy = 7EBCF44921256BDE002B96ED /* PBXContainerItemProxy */;
+			targetProxy = 7EEC7866215E185700B30B91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -934,10 +981,9 @@
 			};
 			name = Release;
 		};
-		7EBCF45521256BDE002B96ED /* Debug */ = {
+		7EEC7869215E185700B30B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GD658M2VWU;
@@ -947,18 +993,19 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.twidereTests;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.twidere.twidereTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twidere.temp_caseinsensitive_rename.app/Twidere.temp_caseinsensitive_rename";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twidere.app/twidere";
 			};
 			name = Debug;
 		};
-		7EBCF45621256BDE002B96ED /* Release */ = {
+		7EEC786A215E185700B30B91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GD658M2VWU;
@@ -968,51 +1015,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.twidereTests;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.twidere.twidereTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twidere.temp_caseinsensitive_rename.app/Twidere.temp_caseinsensitive_rename";
-			};
-			name = Release;
-		};
-		7EBCF45821256BDE002B96ED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GD658M2VWU;
-				INFOPLIST_FILE = twidereUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.twidereUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = twidere;
-			};
-			name = Debug;
-		};
-		7EBCF45921256BDE002B96ED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GD658M2VWU;
-				INFOPLIST_FILE = twidereUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinyuk.twidereUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = twidere;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twidere.app/twidere";
 			};
 			name = Release;
 		};
@@ -1037,20 +1045,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7EBCF45421256BDE002B96ED /* Build configuration list for PBXNativeTarget "twidereTests" */ = {
+		7EEC7868215E185700B30B91 /* Build configuration list for PBXNativeTarget "twidereTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EBCF45521256BDE002B96ED /* Debug */,
-				7EBCF45621256BDE002B96ED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7EBCF45721256BDE002B96ED /* Build configuration list for PBXNativeTarget "twidereUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7EBCF45821256BDE002B96ED /* Debug */,
-				7EBCF45921256BDE002B96ED /* Release */,
+				7EEC7869215E185700B30B91 /* Debug */,
+				7EEC786A215E185700B30B91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
